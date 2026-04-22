@@ -44,3 +44,23 @@ Deployed and live at `site-seven-beta-77.vercel.app`.
 [2026-04-22 16:50:00] Committed: eeabe5a — "Rewrite service cards, how-it-works steps, and Ellen bio with human voice"
 [2026-04-22 16:50:00] Deployed to Vercel production: Ready (15s build) — site-seven-beta-77.vercel.app
 [2026-04-22 16:50:00] Run #2 complete
+Run #2 complete. Here's what changed and why:
+
+**6 areas rewritten, Option 2 (Founder memo) throughout:**
+
+- **9 service card descriptions** — every one was a bullet list squeezed into a sentence. Now each opens with a specific situation or constraint and names Ellen or a concrete outcome. "Going in for a cesarean is its own kind of hard" instead of "Compassionate support before, during, and after."
+- **5 How It Works steps** — replaced passive generic phrases with named actions and response-time promises. "Ellen arrives in early labor and stays through delivery" instead of "Continuous, non-medical labor and delivery support."
+- **Ellen bio** — opened with the NICU detail first ("seen what can go wrong") rather than the credential list. Ended with why she founded the practice, not a platitude about every family deserving support.
+- **Services section heading** — "Comprehensive Doula Services" → "Support at Every Stage," intro now names the single-provider continuity.
+- **Testimonials heading** — "What Mothers Are Saying" → "What Families Are Saying" to match the LGBTQ+ and teen-parent audience.
+- **Hero form intro** — added "within one business day" for a concrete promise.
+
+Deployed and live at `site-seven-beta-77.vercel.app`.
+[2026-04-22 16:40:58] Run #2 finished
+[2026-04-22 16:41:03] Run #3 starting (model: sonnet)
+[2026-04-22 16:41:03] Content audit complete. Rewrote 2 areas in Option 2 (Founder memo) style:
+[2026-04-22 16:41:03]   - All 6 FAQ answers: replaced "Yes. [corporate explanation]" pattern with direct, plain-language responses that name concrete details (plan names, phone number, no-office-visit) and speak to the reader's actual anxiety
+[2026-04-22 16:41:03]   - Form success message: replaced "We received your request and will be in touch shortly" with "We got it. Someone from our team will reach out within one business day" + warmer call-to-action
+[2026-04-22 16:41:03] Committed: a23f701 — "Rewrite FAQ answers and form success message with human voice"
+[2026-04-22 16:41:03] Deployed to Vercel production: Ready (14s build) — site-seven-beta-77.vercel.app
+[2026-04-22 16:41:03] Run #3 complete
