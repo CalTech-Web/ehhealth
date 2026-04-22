@@ -74,8 +74,8 @@ function ContactForm({ id }: { id?: string }) {
           Thank you!
         </h3>
         <p style={{ color: TEAL }} className="text-lg">
-          We received your request and will be in touch shortly. If you need
-          immediate help, call us at{" "}
+          We got it. Someone from our team will reach out within one business
+          day to schedule your initial assessment. Need to talk sooner? Call{" "}
           <a
             href="tel:8339123999"
             className="font-bold underline"
@@ -458,27 +458,27 @@ export default function Home() {
   const faqs = [
     {
       q: "Is doula care really covered by my Medi-Cal insurance?",
-      a: "Yes. EH Nursing and Wellness Services is a Medi-Cal approved doula provider in Los Angeles. If you have a Medi-Cal Managed Care plan such as LA Care, Kaiser, HealthNet, or CalOptima, you may qualify for covered doula services at no out-of-pocket cost. Contact us with your plan details and we will help you verify your coverage.",
+      a: "Most families ask this because they assume professional doula support is too expensive to be real. If you are on LA Care, Kaiser, HealthNet, CalOptima, or another Medi-Cal Managed Care plan, you very likely qualify for full coverage with nothing due at the visit. Call us with your plan name and we will confirm your specific benefits before you commit to anything.",
     },
     {
       q: "Can I reach a real person if I have questions?",
-      a: "Yes. During normal business hours you can always call (833) 912-3999 and speak directly with someone on our team. We prioritize real, human connection and will never leave you waiting for an automated response when you need support.",
+      a: "Call (833) 912-3999 during business hours and you will talk to a real person. No voicemail menus, no automated queue. If you just need a quick answer, that is the fastest way to get one.",
     },
     {
       q: "What is the difference between a doula and a medical provider?",
-      a: "A doula provides non-medical emotional, physical, and educational support throughout pregnancy, birth, and postpartum. Nurse Ellen brings deep clinical experience as a Pediatric and Neonatal ICU nurse and Nurse Practitioner, but her doula services are complementary to your medical team. She works alongside your OB, midwife, or care team.",
+      a: "A doula handles the support side, not the medical side. Breathing, comfort, advocacy, someone who stays through the whole thing. Ellen does not replace your OB or midwife. What she adds is years inside the Pediatric and Neonatal ICU, which means she understands how hospitals work, how to communicate with clinical staff, and how to stay calm when the room is not.",
     },
     {
       q: "Do you support VBAC?",
-      a: "Yes. VBAC support is one of our specialties. Nurse Ellen provides evidence-informed VBAC preparation, coping strategies, and collaborative communication with your care team so you can make informed decisions and feel confident going into your birth.",
+      a: "Yes, and it is one of the situations where having a prepared advocate makes a real difference. Ellen helps you go in with evidence, a clear plan, and your preferences documented before labor begins. The earlier you reach out, the more time you have to prepare properly.",
     },
     {
       q: "Do you provide support for pregnancy loss or abortion?",
-      a: "Yes. We offer sensitive, non-judgmental support for families experiencing miscarriage, stillbirth, or abortion. We respect your privacy, your pace, and your choices, and are here to provide emotional support and practical resources during a difficult time.",
+      a: "Yes. Both. You do not need to explain your circumstances to get that support. Ellen provides confidential care through miscarriage, stillbirth, and abortion, at your pace, without judgment. Your privacy is taken seriously from the very first conversation.",
     },
     {
       q: "What areas do you serve?",
-      a: "We serve families throughout Van Nuys and greater Los Angeles County. As a mobile provider, Nurse Ellen comes to you. There is no office visit required.",
+      a: "Greater Los Angeles County, and Ellen comes to you. No office visit, no commute, no parking to deal with. If you are in the Van Nuys area or anywhere across LA County, you are in the service area.",
     },
   ];
 
