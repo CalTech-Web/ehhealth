@@ -422,15 +422,15 @@ export default function Home() {
   const stats = [
     {
       stat: "4x",
-      label: "Less likely to have low birth weight babies with doula support",
+      label: "lower risk of a low birth weight baby",
     },
     {
       stat: "2x",
-      label: "Less likely to experience complications during birth",
+      label: "fewer complications during labor and delivery",
     },
     {
       stat: "Higher",
-      label: "Likelihood of breastfeeding successfully with a doula present",
+      label: "likelihood of starting breastfeeding",
     },
   ];
 
@@ -438,18 +438,21 @@ export default function Home() {
     {
       initials: "MS",
       name: "Maria S.",
+      role: "Birth doula client, Los Angeles",
       quote:
         "I felt supported the entire time. My doula made sure I understood my options and never felt alone during labor.",
     },
     {
       initials: "JR",
       name: "Jasmine R.",
+      role: "Prenatal and birth support client",
       quote:
         "As a first-time mom, I was honestly nervous about everything. Having someone there to guide me and reassure me made a huge difference.",
     },
     {
       initials: "AM",
       name: "Alyssa M.",
+      role: "Postpartum support client",
       quote:
         "The postpartum support was something I did not expect to need this much. It helped me adjust and feel more confident caring for my baby.",
     },
@@ -1074,7 +1077,10 @@ export default function Home() {
                     <p className="font-bold text-sm" style={{ color: NEAR_BLACK }}>
                       {t.name}
                     </p>
-                    <div className="flex gap-0.5 mt-0.5">
+                    <p className="text-xs mb-0.5" style={{ color: "#888" }}>
+                      {t.role}
+                    </p>
+                    <div className="flex gap-0.5">
                       {[1, 2, 3, 4, 5].map((s) => (
                         <span key={s} style={{ color: "#F4A93F" }}>
                           &#9733;
@@ -1296,8 +1302,9 @@ export default function Home() {
                 className="h-10 w-auto object-contain mb-4"
               />
               <p className="text-xs leading-relaxed" style={{ color: "#888" }}>
-                Nurse-led doula care in Los Angeles. Medi-Cal approved. Mobile
-                provider serving families throughout greater Los Angeles County.
+                EH Nursing brings nurse-led doula support to families throughout
+                Los Angeles County. Medi-Cal covered for qualifying families.
+                Ellen comes to you, no office visit needed.
               </p>
             </div>
 

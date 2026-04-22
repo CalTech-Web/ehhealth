@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "EH Nursing and Wellness Services | Medi-Cal Doula Care in Los Angeles",
   description:
-    "Los Angeles Medi-Cal approved doula provider offering compassionate prenatal, birth, and postpartum support led by a nurse practitioner. Call (833) 912-3999.",
+    "EH Nursing is a Medi-Cal approved doula provider in Los Angeles. Nurse-led prenatal, birth, and postpartum support at no out-of-pocket cost for qualifying families. Call (833) 912-3999.",
   keywords:
     "doula Los Angeles, Medi-Cal doula, nurse practitioner doula, prenatal support, postpartum care, VBAC support, LA Care doula",
 };
