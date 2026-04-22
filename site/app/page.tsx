@@ -352,47 +352,47 @@ export default function Home() {
     {
       img: "/assets/products/initial-assessment.jpg",
       title: "Initial Assessment Visit",
-      desc: "A comprehensive first meeting to learn your goals, review your history, and create a personalized support plan.",
+      desc: "The first visit covers who you are, what you need, and what matters most to you. Ellen reviews your history and birth priorities, then puts a support plan in writing before you leave.",
     },
     {
       img: "/assets/products/prenatal-visits.jpg",
       title: "Prenatal Support",
-      desc: "Personalized birth planning, anxiety support, VBAC preparation, nutrition guidance, and focused check-ins before birth.",
+      desc: "Birth planning, anxiety support, and VBAC preparation through focused check-ins before your due date. You leave each session with answers and a plan, not more things to figure out on your own.",
     },
     {
       img: "/assets/products/vaginal-birth-support.jpg",
       title: "Birth Doula Support",
-      desc: "Continuous, non-medical support from early labor through delivery, comfort techniques, and advocacy for your preferences.",
+      desc: "Ellen stays with you from early labor through delivery. No breaks, no handoffs. She handles comfort techniques and speaks up for your preferences when talking to hospital staff is the last thing on your mind.",
     },
     {
       img: "/assets/products/vbac-support.jpg",
       title: "VBAC Support",
-      desc: "Specialized preparation and coping strategies for planning a vaginal birth after cesarean, with collaborative care team communication.",
+      desc: "Planning a vaginal birth after a cesarean takes more than hope. Ellen helps you prepare with evidence, work through your concerns, and communicate clearly with your care team going in.",
     },
     {
       img: "/assets/products/cesarean-support.jpg",
       title: "Cesarean Birth Support",
-      desc: "Compassionate support before, during, and after a cesarean, with grounding techniques and gentle recovery guidance.",
+      desc: "Going in for a cesarean is its own kind of hard. Ellen is there beforehand to help you feel grounded, during if the facility allows it, and after for a steady, supported recovery.",
     },
     {
       img: "/assets/products/postpartum-support.jpg",
       title: "Postpartum Support",
-      desc: "Newborn care education, emotional support for new parents, and recovery guidance after birth.",
+      desc: "The weeks after birth are harder than most people expect. Ellen helps with newborn feeding, soothing, sleep, and the emotional side of becoming a parent, all at your pace.",
     },
     {
       img: "/assets/products/miscarriage-support.jpg",
       title: "Pregnancy Loss Support",
-      desc: "Sensitive, nonjudgmental care through miscarriage or stillbirth, with emotional support and resources at your pace.",
+      desc: "If you are navigating a miscarriage or stillbirth, you deserve someone who does not rush you. Ellen provides steady, nonjudgmental care through the hardest kind of grief.",
     },
     {
       img: "/assets/products/abortion-support.jpg",
       title: "Abortion Support",
-      desc: "Confidential, judgment-free support before, during, and after an abortion, including emotional care and post-procedure comfort.",
+      desc: "Confidential from the first call through recovery. Ellen helps with planning, logistics, emotional support, and post-procedure care, without judgment and without sharing your information.",
     },
     {
       img: "/assets/products/extended-postpartum.jpg",
       title: "Extended Postpartum Visits",
-      desc: "Additional scheduled visits for deeper guidance on feeding, soothing, sleep strategies, and family adjustment.",
+      desc: "Up to two additional visits for deeper work on feeding challenges, sleep strategies, or family adjustment. Scheduled around your needs, not a fixed calendar.",
     },
   ];
 
@@ -643,8 +643,8 @@ export default function Home() {
                 Request an Appointment
               </h2>
               <p className="text-sm mb-5" style={{ color: "#666" }}>
-                Tell us about your situation and we will reach out to schedule
-                your initial assessment visit.
+                Fill out the form and we will reach out within one business day
+                to schedule your initial assessment visit.
               </p>
               <ContactForm id="contact-hero" />
             </div>
@@ -780,15 +780,15 @@ export default function Home() {
             className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
             style={{ color: NEAR_BLACK }}
           >
-            Comprehensive Doula Services
+            Support at Every Stage
           </h2>
           <p
             className="text-lg text-center max-w-2xl mx-auto mb-14"
             style={{ color: "#444" }}
           >
-            Prenatal visits, birth support, VBAC planning, postpartum
-            check-ins, pregnancy loss, and more. All covered through Medi-Cal
-            for qualifying families.
+            From your first prenatal check-in to the weeks after birth, Ellen
+            provides one consistent presence. Every service below is covered
+            through Medi-Cal for qualifying families.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -853,27 +853,27 @@ export default function Home() {
             {
               step: "1",
               title: "Reach Out",
-              desc: "Call (833) 912-3999 or submit the contact form with your due date, Medi-Cal plan, and type of support needed.",
+              desc: "Call (833) 912-3999 or fill out the form below. Share your due date, your Medi-Cal plan, and the type of support you are looking for. We respond within one business day.",
             },
             {
               step: "2",
               title: "Initial Assessment",
-              desc: "Comprehensive first meeting to review your history, clarify goals, and create a personalized support plan.",
+              desc: "Ellen meets with you to hear your story, review your history, and understand what matters most to you. You leave with a written support plan built around your goals.",
             },
             {
               step: "3",
               title: "Prenatal Sessions",
-              desc: "Regular check-ins for education, birth planning, comfort technique training, and emotional support.",
+              desc: "Regular check-ins before your due date covering birth planning, comfort techniques, and the questions that come up along the way. Same provider every time.",
             },
             {
               step: "4",
               title: "Birth Support",
-              desc: "Continuous, non-medical labor and delivery support, with advocacy and comfort measures throughout.",
+              desc: "Ellen arrives in early labor and stays through delivery. She works alongside your medical team throughout, advocating for your preferences from start to finish.",
             },
             {
               step: "5",
               title: "Postpartum Care",
-              desc: "Recovery and newborn care support after birth, including feeding guidance and emotional check-ins.",
+              desc: "After birth, Ellen checks in on feeding, recovery, and newborn care. If something is not working, you figure it out together, not on your own.",
             },
           ].map((item, i) => (
             <div
@@ -987,20 +987,21 @@ export default function Home() {
 
             <div className="space-y-4 text-base leading-relaxed" style={{ color: "#444" }}>
               <p>
-                After years of caring for newborns, children, and families as a
-                Pediatric and Neonatal ICU nurse, and now as a Nurse
-                Practitioner, Ellen learned how powerful it is when parents feel
-                truly supported. Her doula work is rooted in that belief.
+                Ellen spent years inside the Pediatric and Neonatal ICU before
+                she ever attended a birth as a doula. She has seen what can go
+                wrong. She has also seen what genuine family support looks like
+                when it is done right.
               </p>
               <p>
-                While the care she provides is completely non-medical, she brings
-                a deep sense of calm, understanding, and compassion from her
-                background in family care. As a Medi-Cal approved doula provider
-                in Los Angeles, accessibility matters to her.
+                Her work as a doula is non-medical, but her background shapes
+                everything. She knows hospital rhythms, how to talk to a care
+                team, and how to stay calm when the room is not. That is what
+                she brings to every birth.
               </p>
               <p>
-                Every family deserves high-quality support, regardless of
-                background or circumstance.
+                She founded EH Nursing because too many Los Angeles families
+                were navigating pregnancy without anyone truly in their corner.
+                Medi-Cal coverage changes that.
               </p>
             </div>
 
@@ -1052,7 +1053,7 @@ export default function Home() {
             className="text-3xl lg:text-4xl font-extrabold text-center mb-14 reveal"
             style={{ color: NEAR_BLACK }}
           >
-            What Mothers Are Saying
+            What Families Are Saying
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
