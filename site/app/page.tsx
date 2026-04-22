@@ -707,7 +707,7 @@ export default function Home() {
           {differentiators.map((d, i) => (
             <div
               key={d.title}
-              className="rounded-2xl p-6 flex flex-col items-start gap-4 border reveal"
+              className="rounded-2xl p-6 flex flex-col items-start gap-4 border reveal card-hover"
               style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.1}s` }}
             >
               <div
@@ -794,7 +794,7 @@ export default function Home() {
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="rounded-2xl overflow-hidden border flex flex-col reveal"
+                className="rounded-2xl overflow-hidden border flex flex-col reveal card-hover"
                 style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${(i % 3) * 0.1}s` }}
               >
                 <div className="relative h-44">
@@ -877,7 +877,7 @@ export default function Home() {
           ].map((item, i) => (
             <div
               key={item.step}
-              className="rounded-2xl p-6 border text-center reveal"
+              className="rounded-2xl p-6 border text-center reveal card-hover"
               style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.1}s` }}
             >
               <div
@@ -1057,7 +1057,7 @@ export default function Home() {
             {testimonials.map((t, i) => (
               <div
                 key={t.name}
-                className="rounded-2xl p-8 border flex flex-col reveal"
+                className="rounded-2xl p-8 border flex flex-col reveal card-hover"
                 style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.12}s` }}
               >
                 <div className="flex items-center gap-4 mb-6">
