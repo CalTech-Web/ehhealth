@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 
 /* ─── Brand colors ─────────────────────────────────── */
 const MINT = "#D7F7F7";
@@ -481,6 +481,14 @@ export default function Home() {
       a: "We serve families throughout Van Nuys and greater Los Angeles County. As a mobile provider, Nurse Ellen comes to you. There is no office visit required.",
     },
   ];
+
+  const [showStickyBar, setShowStickyBar] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowStickyBar(window.scrollY > 500);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <main style={{ backgroundColor: BODY_BG, color: NEAR_BLACK }}>
@@ -1230,6 +1238,27 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── STICKY MOBILE CTA ────────────────────────────── */}
+      <div
+        className={`sticky-cta-bar${showStickyBar ? " visible" : ""}`}
+        aria-hidden={!showStickyBar}
+      >
+        <a
+          href="tel:8339123999"
+          className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full border-2 font-bold text-sm transition-opacity hover:opacity-90"
+          style={{ borderColor: TEAL, color: TEAL }}
+        >
+          &#9990; Call Now
+        </a>
+        <a
+          href="#contact"
+          className="flex-1 flex items-center justify-center py-3 rounded-full font-bold text-sm transition-opacity hover:opacity-90"
+          style={{ backgroundColor: TEAL, color: "#fff" }}
+        >
+          Apply Now
+        </a>
+      </div>
 
       {/* ── FOOTER ───────────────────────────────────────── */}
       <footer
