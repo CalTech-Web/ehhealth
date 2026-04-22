@@ -64,3 +64,26 @@ Deployed and live at `site-seven-beta-77.vercel.app`.
 [2026-04-22 16:41:03] Committed: a23f701 — "Rewrite FAQ answers and form success message with human voice"
 [2026-04-22 16:41:03] Deployed to Vercel production: Ready (14s build) — site-seven-beta-77.vercel.app
 [2026-04-22 16:41:03] Run #3 complete
+Run #3 complete. Two areas rewritten, both in Option 2 (Founder memo) voice:
+
+**FAQ answers (all 6)** — broke the "Yes. [corporate explanation]" pattern throughout. Each answer now opens with the reader's actual concern before resolving it. Specific changes by question:
+- Q1 (Medi-Cal coverage): acknowledges the skepticism first ("most families ask this because they assume..."), names all four plans, tells them exactly what to do
+- Q2 (real person): leads with the action ("Call this number"), names what they won't encounter (voicemail menus, automated queue)
+- Q3 (doula vs. medical): explains the doula role in concrete terms first, then uses the NICU background as the credibility bridge instead of a credential list
+- Q4 (VBAC): kept the "yes" but made it purposeful, added a time-sensitive close ("the earlier you reach out...")
+- Q5 (loss/abortion): short and direct, acknowledges the reader doesn't need to explain themselves
+- Q6 (service area): led with the no-office-visit benefit, made it concrete with "no commute, no parking"
+
+**Form success message** — replaced "We received your request and will be in touch shortly" with "We got it. Someone from our team will reach out within one business day." Warmer and more specific.
+
+Deployed and live at `site-seven-beta-77.vercel.app`.
+[2026-04-22 16:45:24] Run #3 finished
+[2026-04-22 16:45:29] Run #4 starting (model: sonnet)
+[2026-04-22 16:50:00] Content audit complete. Rewrote 4 areas in Option 2 (Founder memo) style:
+[2026-04-22 16:50:00]   - Testimonials: added one-line role descriptor under each name (birth doula client / prenatal and birth support client / postpartum support client) to ground each quote in real context
+[2026-04-22 16:50:00]   - Stats labels: cut redundant "with doula support" endings, sharpened phrasing ("lower risk of a low birth weight baby" / "fewer complications during labor and delivery" / "likelihood of starting breastfeeding")
+[2026-04-22 16:50:00]   - Footer blurb: replaced "Nurse-led doula care in Los Angeles. Medi-Cal approved. Mobile provider..." with a sentence that names Ellen and ends on the no-office-visit benefit
+[2026-04-22 16:50:00]   - Meta description: replaced "offering compassionate prenatal, birth, and postpartum support" with a specific claim about no out-of-pocket cost for qualifying families
+[2026-04-22 16:50:00] Committed: 0132cd8 — "Sharpen testimonial context, stats labels, footer blurb, and meta description"
+[2026-04-22 16:50:00] Deployed to Vercel production: Ready (15s build) — site-seven-beta-77.vercel.app
+[2026-04-22 16:50:00] Run #4 complete
