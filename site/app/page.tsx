@@ -289,7 +289,7 @@ function FaqSection({
         className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
         style={{ color: teal }}
       >
-        Common Questions
+        Questions We Hear All the Time
       </p>
       <h2
         className="text-3xl lg:text-4xl font-extrabold text-center mb-14"
@@ -676,7 +676,11 @@ export default function Home() {
                 <span style={{ color: MINT }}>&#10022;</span>
                 <span>Medi-Cal Accepted</span>
                 <span style={{ color: MINT }}>&#10022;</span>
+                <span>No Office Visit Required</span>
+                <span style={{ color: MINT }}>&#10022;</span>
                 <span>LA Care, Kaiser, HealthNet, CalOptima</span>
+                <span style={{ color: MINT }}>&#10022;</span>
+                <span>Comes to You</span>
                 <span style={{ color: MINT }}>&#10022;</span>
               </span>
             ))}
@@ -777,7 +781,7 @@ export default function Home() {
             className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
             style={{ color: TEAL }}
           >
-            What We Offer
+            Nine Services. Medi-Cal Covered.
           </p>
           <h2
             className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
@@ -842,13 +846,13 @@ export default function Home() {
           className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
           style={{ color: TEAL }}
         >
-          Your Path to Support
+          What Happens When You Reach Out
         </p>
         <h2
           className="text-3xl lg:text-4xl font-extrabold text-center mb-14 reveal"
           style={{ color: NEAR_BLACK }}
         >
-          How It Works
+          From First Call to Postpartum
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -920,7 +924,7 @@ export default function Home() {
             className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
             style={{ color: "#fff" }}
           >
-            The Power of Doula Support
+            What the Research Found
           </h2>
           <p
             className="text-lg text-center max-w-2xl mx-auto mb-14"
@@ -973,7 +977,7 @@ export default function Home() {
               className="text-sm font-semibold uppercase tracking-widest mb-3"
               style={{ color: TEAL }}
             >
-              Meet Your Doula
+              Neonatal ICU Nurse. Nurse Practitioner. Doula.
             </p>
             <h2
               className="text-3xl lg:text-4xl font-extrabold mb-2"
@@ -1118,7 +1122,7 @@ export default function Home() {
                 className="text-sm font-semibold uppercase tracking-widest mb-3"
                 style={{ color: MINT }}
               >
-                Get Started Today
+                Find Out If You Qualify
               </p>
               <h2
                 className="text-3xl lg:text-4xl font-extrabold mb-6"
