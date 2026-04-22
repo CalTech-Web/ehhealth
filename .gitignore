@@ -1,2 +1,5 @@
 .DS_Store
 .playwright-mcp/
+site/node_modules
+site/.next
+.vercel
