@@ -556,9 +556,10 @@ export default function Home() {
       <div
         className="py-3"
         style={{ backgroundColor: TEAL, color: "#fff", overflow: "hidden" }}
+        aria-hidden="true"
       >
-        <div className="flex gap-8 whitespace-nowrap">
-          {Array(4)
+        <div className="marquee-track">
+          {Array(8)
             .fill(null)
             .map((_, i) => (
               <span key={i} className="inline-flex items-center gap-8 text-sm font-medium px-4">
