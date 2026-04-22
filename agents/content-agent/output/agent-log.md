@@ -87,3 +87,23 @@ Deployed and live at `site-seven-beta-77.vercel.app`.
 [2026-04-22 16:50:00] Committed: 0132cd8 — "Sharpen testimonial context, stats labels, footer blurb, and meta description"
 [2026-04-22 16:50:00] Deployed to Vercel production: Ready (15s build) — site-seven-beta-77.vercel.app
 [2026-04-22 16:50:00] Run #4 complete
+Run #4 complete. Four targeted changes, all deployed and live at `site-seven-beta-77.vercel.app`:
+
+- **Testimonials** — added a one-line role descriptor under each reviewer name ("Birth doula client, Los Angeles" / "Prenatal and birth support client" / "Postpartum support client"). Each quote now has context instead of floating alone.
+- **Stats labels** — cut the redundant "with doula support" endings and sharpened the phrasing. "Fewer complications during labor and delivery" instead of "Less likely to experience complications during birth."
+- **Footer blurb** — replaced the generic three-sentence list with a sentence that names Ellen and ends on the no-office-visit benefit.
+- **Meta description** — replaced "offering compassionate prenatal, birth, and postpartum support" with a specific claim about no out-of-pocket cost for qualifying families.
+[2026-04-22 16:48:40] Run #4 finished
+[2026-04-22 16:48:45] Run #5 starting (model: sonnet)
+[2026-04-22 17:05:00] Content audit complete. Rewrote 8 areas in Option 2 (Founder memo) style:
+[2026-04-22 17:05:00]   - Services overline: "What We Offer" → "Nine Services. Medi-Cal Covered."
+[2026-04-22 17:05:00]   - How It Works overline: "Your Path to Support" → "What Happens When You Reach Out"
+[2026-04-22 17:05:00]   - How It Works heading: "How It Works" → "From First Call to Postpartum"
+[2026-04-22 17:05:00]   - Stats heading: "The Power of Doula Support" → "What the Research Found"
+[2026-04-22 17:05:00]   - Ellen section overline: "Meet Your Doula" → "Neonatal ICU Nurse. Nurse Practitioner. Doula."
+[2026-04-22 17:05:00]   - FAQ overline: "Common Questions" → "Questions We Hear All the Time"
+[2026-04-22 17:05:00]   - Contact overline: "Get Started Today" → "Find Out If You Qualify"
+[2026-04-22 17:05:00]   - Marquee strip: added "No Office Visit Required" and "Comes to You" items
+[2026-04-22 17:05:00] Committed: 04c6912 — "Sharpen section overlines and headings with specific, human copy"
+[2026-04-22 17:05:00] Deployed to Vercel production: Ready (15s build) — site-seven-beta-77.vercel.app
+[2026-04-22 17:05:00] Run #5 complete
