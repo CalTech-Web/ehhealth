@@ -400,22 +400,22 @@ export default function Home() {
     {
       icon: "/assets/gallery/icon-nurse-led.png",
       title: "Nurse-Led Care",
-      desc: "Founder Ellen is a Pediatric and Neonatal ICU nurse and Nurse Practitioner. Her clinical expertise informs every interaction, even though all doula services are non-medical.",
+      desc: "Ellen spent years in the Pediatric and Neonatal ICU before founding EH Nursing. She is not acting as your doctor, but she knows exactly what happens in a delivery room and how to keep you steady through it.",
     },
     {
       icon: "/assets/gallery/icon-medi-cal.png",
       title: "Medi-Cal Covered",
-      desc: "Services are covered by Medi-Cal Managed Care plans including LA Care, Kaiser, HealthNet, and CalOptima, so professional doula support is accessible at no out-of-pocket cost.",
+      desc: "Services are covered by Medi-Cal Managed Care plans including LA Care, Kaiser, HealthNet, and CalOptima. For qualifying families, that means professional doula support at no out-of-pocket cost.",
     },
     {
       icon: "/assets/gallery/icon-judgment-free.png",
       title: "Judgment-Free Care",
-      desc: "Every family is welcomed without judgment. VBAC, cesarean, abortion, pregnancy loss, teen parents, LGBTQ+ families, all are supported with equal compassion.",
+      desc: "Whether you are planning a VBAC, navigating a loss, or an LGBTQ+ family building something new, you do not owe anyone an explanation here. Every family walks through the same door.",
     },
     {
       icon: "/assets/gallery/icon-continuous-care.png",
       title: "Continuous Care",
-      desc: "One consistent provider from prenatal through postpartum. Not a rotating team or anonymous service, just a steady, familiar presence throughout your journey.",
+      desc: "One provider, prenatal through postpartum. You see the same face at every visit, so when labor starts, you already know who is showing up for you.",
     },
   ];
 
@@ -581,10 +581,10 @@ export default function Home() {
                 className="text-lg lg:text-xl mb-8 leading-relaxed"
                 style={{ color: "#333" }}
               >
-                Los Angeles Medi-Cal approved doula provider offering
-                compassionate prenatal, birth, and postpartum support led by a
-                nurse practitioner. Accessible to every family, regardless of
-                background.
+                Most families don&apos;t know doula care can be covered by
+                Medi-Cal. EH Nursing was built to change that. A nurse
+                practitioner by your side from your first prenatal visit through
+                postpartum, at no out-of-pocket cost for qualifying families.
               </p>
 
               {/* Call CTA */}
@@ -698,9 +698,10 @@ export default function Home() {
           className="text-lg text-center max-w-2xl mx-auto mb-14"
           style={{ color: "#555" }}
         >
-          Professional doula support that was once out of reach for many
-          families is now available through Medi-Cal, delivered by a nurse
-          practitioner who truly cares.
+          Doula care has always been expensive. Most families pay out of pocket
+          or go without. If you have Medi-Cal, you may qualify for full
+          coverage, delivered by a nurse practitioner who spent years in the
+          NICU.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -785,9 +786,9 @@ export default function Home() {
             className="text-lg text-center max-w-2xl mx-auto mb-14"
             style={{ color: "#444" }}
           >
-            From your first prenatal visit through postpartum recovery, we
-            provide continuous, personalized support for every stage of your
-            journey.
+            Prenatal visits, birth support, VBAC planning, postpartum
+            check-ins, pregnancy loss, and more. All covered through Medi-Cal
+            for qualifying families.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -922,8 +923,9 @@ export default function Home() {
             className="text-lg text-center max-w-2xl mx-auto mb-14"
             style={{ color: "#aaa" }}
           >
-            Research consistently shows that continuous doula support leads to
-            measurably better outcomes for mothers and babies.
+            Having a doula is not just about feeling less alone, though that
+            matters too. The clinical evidence on birth outcomes is hard to
+            ignore.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -1115,15 +1117,15 @@ export default function Home() {
                 className="text-3xl lg:text-4xl font-extrabold mb-6"
                 style={{ color: "#fff" }}
               >
-                Ready to Get the Support You Deserve?
+                Let&apos;s figure out if your plan covers this.
               </h2>
               <p
                 className="text-base leading-relaxed mb-8"
                 style={{ color: "#aaa" }}
               >
-                Reach out today to schedule your initial assessment visit. We
-                will help you verify your Medi-Cal coverage and match you with
-                the right support plan for your family.
+                Fill out the form or call us directly. We will check your
+                Medi-Cal plan, answer your questions, and schedule your initial
+                assessment visit. One conversation is usually all it takes.
               </p>
 
               {/* Phone */}
