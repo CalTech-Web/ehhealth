@@ -490,6 +490,21 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            (e.target as HTMLElement).classList.add("in-view");
+            obs.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <main style={{ backgroundColor: BODY_BG, color: NEAR_BLACK }}>
       {/* ── NAV ─────────────────────────────────────────── */}
@@ -674,7 +689,7 @@ export default function Home() {
           Why Choose EH Nursing
         </p>
         <h2
-          className="text-3xl lg:text-4xl font-extrabold text-center mb-4"
+          className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
           style={{ color: NEAR_BLACK }}
         >
           Nurse-Led. Insurance Covered. Always Human.
@@ -689,11 +704,11 @@ export default function Home() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {differentiators.map((d) => (
+          {differentiators.map((d, i) => (
             <div
               key={d.title}
-              className="rounded-2xl p-6 flex flex-col items-start gap-4 border"
-              style={{ backgroundColor: "#fff", borderColor: BORDER }}
+              className="rounded-2xl p-6 flex flex-col items-start gap-4 border reveal"
+              style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.1}s` }}
             >
               <div
                 className="w-14 h-14 rounded-xl flex items-center justify-center"
@@ -761,7 +776,7 @@ export default function Home() {
             What We Offer
           </p>
           <h2
-            className="text-3xl lg:text-4xl font-extrabold text-center mb-4"
+            className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
             style={{ color: NEAR_BLACK }}
           >
             Comprehensive Doula Services
@@ -776,11 +791,11 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
+            {services.map((s, i) => (
               <div
                 key={s.title}
-                className="rounded-2xl overflow-hidden border flex flex-col"
-                style={{ backgroundColor: "#fff", borderColor: BORDER }}
+                className="rounded-2xl overflow-hidden border flex flex-col reveal"
+                style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${(i % 3) * 0.1}s` }}
               >
                 <div className="relative h-44">
                   <Image
@@ -826,7 +841,7 @@ export default function Home() {
           Your Path to Support
         </p>
         <h2
-          className="text-3xl lg:text-4xl font-extrabold text-center mb-14"
+          className="text-3xl lg:text-4xl font-extrabold text-center mb-14 reveal"
           style={{ color: NEAR_BLACK }}
         >
           How It Works
@@ -859,11 +874,11 @@ export default function Home() {
               title: "Postpartum Care",
               desc: "Recovery and newborn care support after birth, including feeding guidance and emotional check-ins.",
             },
-          ].map((item) => (
+          ].map((item, i) => (
             <div
               key={item.step}
-              className="rounded-2xl p-6 border text-center"
-              style={{ backgroundColor: "#fff", borderColor: BORDER }}
+              className="rounded-2xl p-6 border text-center reveal"
+              style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.1}s` }}
             >
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4"
@@ -898,7 +913,7 @@ export default function Home() {
             Evidence-Based Outcomes
           </p>
           <h2
-            className="text-3xl lg:text-4xl font-extrabold text-center mb-4"
+            className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
             style={{ color: "#fff" }}
           >
             The Power of Doula Support
@@ -912,13 +927,14 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((s) => (
+            {stats.map((s, i) => (
               <div
                 key={s.stat}
-                className="rounded-2xl p-8 text-center border"
+                className="rounded-2xl p-8 text-center border reveal"
                 style={{
                   backgroundColor: "rgba(215,247,247,0.06)",
                   borderColor: "rgba(215,247,247,0.12)",
+                  animationDelay: `${i * 0.15}s`,
                 }}
               >
                 <p
@@ -939,7 +955,7 @@ export default function Home() {
       {/* ── MEET NURSE ELLEN ─────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div className="relative rounded-2xl overflow-hidden h-96 lg:h-[520px]">
+          <div className="relative rounded-2xl overflow-hidden h-96 lg:h-[520px] reveal">
             <Image
               src="/assets/team/nurse-ellen-profile.jpg"
               alt="Ellen Hakopyan, Founder and Lead Doula"
@@ -947,7 +963,7 @@ export default function Home() {
               className="object-cover object-top"
             />
           </div>
-          <div>
+          <div className="reveal" style={{ animationDelay: "0.15s" }}>
             <p
               className="text-sm font-semibold uppercase tracking-widest mb-3"
               style={{ color: TEAL }}
@@ -1031,18 +1047,18 @@ export default function Home() {
             Families We&apos;ve Supported
           </p>
           <h2
-            className="text-3xl lg:text-4xl font-extrabold text-center mb-14"
+            className="text-3xl lg:text-4xl font-extrabold text-center mb-14 reveal"
             style={{ color: NEAR_BLACK }}
           >
             What Mothers Are Saying
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
+            {testimonials.map((t, i) => (
               <div
                 key={t.name}
-                className="rounded-2xl p-8 border flex flex-col"
-                style={{ backgroundColor: "#fff", borderColor: BORDER }}
+                className="rounded-2xl p-8 border flex flex-col reveal"
+                style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.12}s` }}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div
