@@ -269,6 +269,83 @@ function ContactForm({ id }: { id?: string }) {
   );
 }
 
+/* ─── FAQ Accordion Component ───────────────────────── */
+function FaqSection({
+  faqs,
+  teal,
+  nearBlack,
+  border,
+}: {
+  faqs: { q: string; a: string }[];
+  teal: string;
+  nearBlack: string;
+  border: string;
+}) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="max-w-4xl mx-auto px-6 py-20">
+      <p
+        className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
+        style={{ color: teal }}
+      >
+        Common Questions
+      </p>
+      <h2
+        className="text-3xl lg:text-4xl font-extrabold text-center mb-14"
+        style={{ color: nearBlack }}
+      >
+        Frequently Asked Questions
+      </h2>
+
+      <div className="space-y-4">
+        {faqs.map((faq, i) => {
+          const isOpen = openIndex === i;
+          return (
+            <div
+              key={faq.q}
+              className="rounded-2xl border overflow-hidden"
+              style={{ backgroundColor: "#fff", borderColor: border }}
+            >
+              <button
+                type="button"
+                onClick={() => setOpenIndex(isOpen ? null : i)}
+                className="w-full flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm text-left"
+                style={{ color: nearBlack, background: "none" }}
+                aria-expanded={isOpen}
+              >
+                <span>{faq.q}</span>
+                <svg
+                  className={`faq-chevron${isOpen ? " open" : ""}`}
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  style={{ color: teal, marginLeft: "1rem" }}
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 7.5L10 12.5L15 7.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+              <div className={`faq-body${isOpen ? " open" : ""}`}>
+                <p className="text-sm leading-relaxed" style={{ color: "#555" }}>
+                  {faq.a}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 /* ─── Page ──────────────────────────────────────────── */
 export default function Home() {
   const services = [
@@ -992,49 +1069,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────── */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-        <p
-          className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
-          style={{ color: TEAL }}
-        >
-          Common Questions
-        </p>
-        <h2
-          className="text-3xl lg:text-4xl font-extrabold text-center mb-14"
-          style={{ color: NEAR_BLACK }}
-        >
-          Frequently Asked Questions
-        </h2>
-
-        <div className="space-y-4">
-          {faqs.map((faq) => (
-            <details
-              key={faq.q}
-              className="rounded-2xl border overflow-hidden"
-              style={{ backgroundColor: "#fff", borderColor: BORDER }}
-            >
-              <summary
-                className="flex items-center justify-between px-6 py-5 cursor-pointer font-semibold text-sm list-none"
-                style={{ color: NEAR_BLACK }}
-              >
-                <span>{faq.q}</span>
-                <span
-                  className="ml-4 text-xl font-light flex-shrink-0"
-                  style={{ color: TEAL }}
-                >
-                  +
-                </span>
-              </summary>
-              <div
-                className="px-6 pb-5 text-sm leading-relaxed"
-                style={{ color: "#555" }}
-              >
-                {faq.a}
-              </div>
-            </details>
-          ))}
-        </div>
-      </section>
+      <FaqSection faqs={faqs} teal={TEAL} nearBlack={NEAR_BLACK} border={BORDER} />
 
       {/* ── CONTACT SECTION ──────────────────────────────── */}
       <section
