@@ -97,3 +97,14 @@ Done. The enhancement is live: the teal key phrases in the hero headline now ani
 [2026-04-23 10:45:41] Run #7 starting (model: sonnet)
 Deployment succeeded. Added large decorative quote marks to the three testimonial cards. Each card now has a 10rem teal close-quote character absolutely positioned in the bottom-right corner (card has overflow:hidden to clip it). The mark fades in with a subtle scale+rotate entrance animation (0.9s, cubic-bezier ease) triggered when the card scrolls into view via the existing .reveal.in-view class selector. Adds typographic richness and editorial polish to the social proof section with no JavaScript added.
 [2026-04-23 10:45:41] Run #7 finished
+Deployment is live (`state: success`). The enhancement: each testimonial card on ehhealth.org now has a large decorative teal close-quote mark (`"`) positioned in the bottom-right corner of the card. It fades in with a subtle scale-and-rotate entrance animation when the card scrolls into view, using the existing `.reveal.in-view` CSS selector — no JavaScript added. Gives the social proof section a typographically rich, editorial feel.
+[2026-04-23 10:49:43] Run #7 finished
+[2026-04-23 10:49:48] Run #8 starting (model: sonnet)
+Enhancement implemented and deployment triggered. The change adds **sequential star pop-in animation** to the three testimonial cards: each card's 5 gold stars start gray and scaled down, then transition to full gold one by one (150ms apart, starting 0.9s after the card scrolls into view) using a springy `cubic-bezier(0.34, 1.56, 0.64, 1)` bounce. Pure CSS with no new JavaScript.
+[2026-04-23 10:53:43] Run #8 finished
+[2026-04-23 10:53:48] Run #9 starting (model: sonnet)
+Deployment succeeded. The "How It Works" step circles on ehhealth.org now bounce-pop with a teal glow ring sequentially as the connector line draws across them, timed so each circle fires precisely when the line "reaches" it (steps 1 through 5 at 0.5s, 0.85s, 1.2s, 1.55s, and 1.9s). This creates a satisfying storytelling animation that reinforces the journey visualization already established by the connector line.
+[2026-04-23 10:56:30] Run #9 finished
+[2026-04-23 10:56:35] Run #10 starting (model: sonnet)
+Deployment succeeded. Added a 3D perspective tilt effect to all 9 service cards. Hovering a card now tracks the mouse position within the card and applies `perspective(800px) rotateX() rotateY()` plus `translateZ(12px)` with a fast 0.08s response and a slow 0.5s spring-back, giving each card a tactile, dimensional feel. A teal glow shadow (`rgba(101,139,139,0.30)`) appears on hover. Replaces the previous flat `translateY(-5px)` card-hover lift with a fully mouse-reactive 3D tilt via a new `TiltCard` React component.
+[2026-04-23 10:58:00] Run #10 finished
