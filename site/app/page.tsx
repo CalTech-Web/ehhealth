@@ -60,6 +60,60 @@ function StickyMobileCTA() {
   );
 }
 
+/* ─── Parallax image band ─────────────────────────── */
+function ParallaxBand() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const imgWrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function update() {
+      if (!sectionRef.current || !imgWrapRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const progress = 1 - rect.bottom / (window.innerHeight + rect.height);
+      const offset = (progress - 0.5) * 70;
+      imgWrapRef.current.style.transform = `translateY(${offset}px)`;
+    }
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="relative h-64 lg:h-80 overflow-hidden">
+      <div
+        ref={imgWrapRef}
+        className="absolute will-change-transform"
+        style={{ top: "-18%", bottom: "-18%", left: 0, right: 0 }}
+      >
+        <Image
+          src="/assets/gallery/doula-image.png"
+          alt="Doula supporting a mother during birth"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+      <div
+        className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+        style={{ backgroundColor: "rgba(17,17,17,0.55)" }}
+      >
+        <p
+          className="text-2xl lg:text-3xl font-extrabold italic"
+          style={{ color: "#fff" }}
+        >
+          &ldquo;Your voice. Your birth. Your family.&rdquo;
+        </p>
+        <p
+          className="mt-3 text-sm font-semibold uppercase tracking-widest"
+          style={{ color: "#D7F7F7" }}
+        >
+          Ellen Hakopyan, Founder
+        </p>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Brand colors ─────────────────────────────────── */
 const MINT = "#D7F7F7";
 const NEAR_BLACK = "#111111";
@@ -858,32 +912,7 @@ export default function Home() {
       </section>
 
       {/* ── DOULA IMAGE BAND ─────────────────────────────── */}
-      <section className="relative h-64 lg:h-80 overflow-hidden">
-        <Image
-          src="/assets/gallery/doula-image.png"
-          alt="Doula supporting a mother during birth"
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div
-          className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
-          style={{ backgroundColor: "rgba(17,17,17,0.55)" }}
-        >
-          <p
-            className="text-2xl lg:text-3xl font-extrabold italic"
-            style={{ color: "#fff" }}
-          >
-            &ldquo;Your voice. Your birth. Your family.&rdquo;
-          </p>
-          <p
-            className="mt-3 text-sm font-semibold uppercase tracking-widest"
-            style={{ color: MINT }}
-          >
-            Ellen Hakopyan, Founder
-          </p>
-        </div>
-      </section>
+      <ParallaxBand />
 
       {/* ── SERVICES ─────────────────────────────────────── */}
       <section
