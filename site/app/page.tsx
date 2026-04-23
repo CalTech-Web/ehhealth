@@ -554,15 +554,9 @@ export default function Home() {
         className="sticky top-0 z-50 w-full px-6 py-3 flex items-center justify-between shadow-sm"
         style={{ backgroundColor: "#fff", borderBottom: `1px solid ${BORDER}` }}
       >
-        <a href="/" aria-label="EH Nursing and Wellness Services Home">
-          <Image
-            src="/assets/logos/eh-logo-rectangle.png"
-            alt="EH Nursing and Wellness Services"
-            width={180}
-            height={48}
-            className="h-10 w-auto object-contain"
-            priority
-          />
+        <a href="/" aria-label="EH Nursing and Wellness Services Home" className="flex flex-col leading-tight">
+          <span className="text-base font-extrabold tracking-tight" style={{ color: NEAR_BLACK }}>EH Nursing</span>
+          <span className="text-xs font-semibold tracking-wide uppercase" style={{ color: TEAL }}>and Wellness Services</span>
         </a>
         <div className="flex items-center gap-3">
           <a
@@ -1334,13 +1328,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Logo + about */}
             <div>
-              <Image
-                src="/assets/logos/eh-logo-rectangle.png"
-                alt="EH Nursing and Wellness Services"
-                width={160}
-                height={42}
-                className="h-10 w-auto object-contain mb-4"
-              />
+              <div className="flex flex-col leading-tight mb-4">
+                <span className="text-base font-extrabold tracking-tight" style={{ color: "#fff" }}>EH Nursing</span>
+                <span className="text-xs font-semibold tracking-wide uppercase" style={{ color: MINT }}>and Wellness Services</span>
+              </div>
               <p className="text-xs leading-relaxed" style={{ color: "#888" }}>
                 EH Nursing brings nurse-led doula support to families throughout
                 Los Angeles County. Medi-Cal covered for qualifying families.
