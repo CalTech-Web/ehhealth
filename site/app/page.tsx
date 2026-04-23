@@ -767,7 +767,6 @@ export default function Home() {
           alt="Doula supporting a mother during birth"
           fill
           sizes="100vw"
-          priority
           className="object-cover"
         />
         <div
