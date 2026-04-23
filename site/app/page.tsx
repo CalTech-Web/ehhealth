@@ -821,7 +821,7 @@ export default function Home() {
               {/* Call CTA */}
               <a
                 href="tel:8339123999"
-                className="inline-flex items-center gap-3 text-lg font-bold px-8 py-4 rounded-full border-2 mb-4 transition-all hover:opacity-90"
+                className="inline-flex items-center gap-3 text-lg font-bold px-8 py-4 rounded-full border-2 mb-4 transition-all hover:opacity-90 call-ring-pulse"
                 style={{
                   borderColor: NEAR_BLACK,
                   color: NEAR_BLACK,
