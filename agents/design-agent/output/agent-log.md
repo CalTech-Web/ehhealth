@@ -61,3 +61,8 @@ Deployment succeeded. Added a teal gradient scroll progress bar fixed at the ver
 [2026-04-23 10:18:13] Run #1 starting (model: sonnet)
 Deployment succeeded. Added a parallax scrolling effect to the doula image band ("Your voice. Your birth. Your family." section). The background image now scrolls at ~50% viewport speed via a passive scroll listener and GPU-accelerated translateY transform, creating cinematic depth as users pass through the section. Image wrapper extended ±18% vertically so the parallax never clips.
 [2026-04-23 10:18:13] Run #1 finished
+Deployment is live. The visual enhancement: the doula image band now has a **parallax scrolling effect** — as users scroll past the "Your voice. Your birth. Your family." quote section, the background photo moves at ~50% the page speed, creating a cinematic depth effect. Implemented as a `ParallaxBand` component with a passive scroll listener and GPU-accelerated `translateY` transform (`will-change-transform`). The image wrapper is extended ±18% vertically to ensure no clipping at the parallax extremes.
+[2026-04-23 10:22:40] Run #1 finished
+[2026-04-23 10:22:45] Run #2 starting (model: sonnet)
+Deployment succeeded. Service cards in the Services section now have an image zoom + teal gradient overlay on hover. Hovering a card zooms the photo to scale(1.07) with a 0.55s ease transition, and a teal-to-transparent gradient overlay (rgba(101,139,139,0.55)) fades in from the bottom of the image. Implemented with two new CSS classes (`.service-img`, `.service-img-overlay`) and a `.service-card` parent selector. No JS added.
+[2026-04-23 10:22:45] Run #2 finished
