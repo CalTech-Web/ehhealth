@@ -51,3 +51,13 @@ Deployment succeeded. Added a teal gradient scroll progress bar fixed at the ver
 [2026-04-23 10:13:19] ==========================================
 [2026-04-23 10:13:19] Run #1 starting (model: sonnet)
 [2026-04-23 10:13:48] Claude command interrupted or failed
+[2026-04-23 10:18:13] ==========================================
+[2026-04-23 10:18:13] Agent: Design Agent
+[2026-04-23 10:18:13] Model: sonnet
+[2026-04-23 10:18:13] Workspace: /Users/brandonhopkins/Projects/ehhealth/agents/design-agent
+[2026-04-23 10:18:13] Stop on complete: false
+[2026-04-23 10:18:13] Max loops: 15 (0=infinite)
+[2026-04-23 10:18:13] ==========================================
+[2026-04-23 10:18:13] Run #1 starting (model: sonnet)
+Deployment succeeded. Added a parallax scrolling effect to the doula image band ("Your voice. Your birth. Your family." section). The background image now scrolls at ~50% viewport speed via a passive scroll listener and GPU-accelerated translateY transform, creating cinematic depth as users pass through the section. Image wrapper extended ±18% vertically so the parallax never clips.
+[2026-04-23 10:18:13] Run #1 finished
