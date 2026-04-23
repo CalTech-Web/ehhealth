@@ -495,6 +495,10 @@ export default function Home() {
       q: "Can a doula attend my hospital birth or home birth in Los Angeles?",
       a: "Yes. Ellen attends both hospital births and home births throughout Los Angeles County. As a mobile provider, she comes to wherever you plan to deliver. For hospital births she works alongside your OB and nursing team. For home births she coordinates with your midwife. No office visit is ever required.",
     },
+    {
+      q: "What happens at the initial assessment visit?",
+      a: "The initial assessment is where Ellen learns who you are. She reviews your birth history, listens to your goals, and asks about anything you are hoping to avoid or prepare for. Before the visit ends, she puts together a written support plan tailored to your needs. There is nothing to prepare in advance. Just show up and tell her what matters to you.",
+    },
   ];
 
   const [showStickyBar, setShowStickyBar] = useState(false);

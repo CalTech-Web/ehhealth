@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "EH Nursing is a Medi-Cal approved doula provider in Los Angeles. Nurse-led prenatal, birth, and postpartum support at no out-of-pocket cost for qualifying families. Call (833) 912-3999.",
   keywords:
-    "doula Los Angeles, Medi-Cal doula, nurse practitioner doula, prenatal support, postpartum care, VBAC support, LA Care doula, postpartum doula Los Angeles, birth doula Medi-Cal, insurance covered doula, Van Nuys doula, nurse doula Los Angeles, CalOptima doula, HealthNet doula, Kaiser doula Medi-Cal, doula covered by insurance Los Angeles, how much does a doula cost Medi-Cal, VBAC doula Los Angeles, cesarean birth doula, pregnancy loss doula, abortion support doula, doula Van Nuys CA, doula North Hollywood, doula Sherman Oaks, doula Burbank, doula Glendale, nurse led doula Los Angeles County, Medi-Cal HMO doula provider, doula at no cost Medi-Cal, doula Encino, doula Northridge, doula Studio City, doula Pasadena, doula Culver City, doula Hawthorne, doula Inglewood, hospital birth doula Los Angeles, home birth doula Los Angeles, NICU nurse doula Los Angeles, doula for teen moms Los Angeles, LGBTQ doula Los Angeles, nurse practitioner doula Los Angeles, doula domestic violence support Los Angeles",
+    "doula Los Angeles, Medi-Cal doula, nurse practitioner doula, prenatal support, postpartum care, VBAC support, LA Care doula, postpartum doula Los Angeles, birth doula Medi-Cal, insurance covered doula, Van Nuys doula, nurse doula Los Angeles, CalOptima doula, HealthNet doula, Kaiser doula Medi-Cal, doula covered by insurance Los Angeles, how much does a doula cost Medi-Cal, VBAC doula Los Angeles, cesarean birth doula, pregnancy loss doula, abortion support doula, doula Van Nuys CA, doula North Hollywood, doula Sherman Oaks, doula Burbank, doula Glendale, nurse led doula Los Angeles County, Medi-Cal HMO doula provider, doula at no cost Medi-Cal, doula Encino, doula Northridge, doula Studio City, doula Pasadena, doula Culver City, doula Hawthorne, doula Inglewood, hospital birth doula Los Angeles, home birth doula Los Angeles, NICU nurse doula Los Angeles, doula for teen moms Los Angeles, LGBTQ doula Los Angeles, nurse practitioner doula Los Angeles, doula domestic violence support Los Angeles, prenatal doula Los Angeles, postpartum doula Medi-Cal Los Angeles, doula birth center Los Angeles, doula for first-time mothers Los Angeles, Medi-Cal approved doula 2025, Van Nuys prenatal support",
   authors: [{ name: "EH Nursing and Wellness Services", url: "https://ehhealth.org" }],
   creator: "EH Nursing and Wellness Services",
   publisher: "EH Nursing and Wellness Services",
@@ -68,6 +68,30 @@ const jsonLd = {
       inLanguage: "en-US",
     },
     {
+      "@type": "WebPage",
+      "@id": "https://ehhealth.org/#webpage",
+      url: "https://ehhealth.org",
+      name: "EH Nursing and Wellness Services | Medi-Cal Doula Care in Los Angeles",
+      description:
+        "EH Nursing is a Medi-Cal approved doula provider in Los Angeles. Nurse-led prenatal, birth, and postpartum support at no out-of-pocket cost for qualifying families.",
+      isPartOf: { "@id": "https://ehhealth.org/#website" },
+      about: { "@id": "https://ehhealth.org/#organization" },
+      inLanguage: "en-US",
+      datePublished: "2025-01-01",
+      dateModified: "2026-04-22",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://ehhealth.org",
+          },
+        ],
+      },
+    },
+    {
       "@type": ["LocalBusiness", "MedicalBusiness"],
       "@id": "https://ehhealth.org/#organization",
       name: "EH Nursing and Wellness Services",
@@ -107,12 +131,21 @@ const jsonLd = {
         name: "NPI",
         value: "1710798616",
       },
+      legalName: "EH Nursing and Wellness Services",
+      foundingDate: "2025",
       slogan: "Take Advantage of Insurance Covered Doula Care Today",
       serviceType: "Doula Services",
       priceRange: "Covered by Medi-Cal Managed Care",
       currenciesAccepted: "USD",
       paymentAccepted: "Medi-Cal, LA Care, Kaiser, HealthNet, CalOptima",
-      openingHours: "Mo-Fr 09:00-18:00",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "18:00",
+        },
+      ],
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -405,6 +438,14 @@ const jsonLd = {
             text: "Yes. Ellen attends both hospital births and home births throughout Los Angeles County. As a mobile provider, she comes to wherever you plan to deliver. For hospital births she works alongside your OB and nursing team. For home births she coordinates with your midwife. No office visit is ever required.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What happens at the initial assessment visit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The initial assessment is where Ellen learns who you are. She reviews your birth history, listens to your goals, and asks about anything you are hoping to avoid or prepare for. Before the visit ends, she puts together a written support plan tailored to your needs. There is nothing to prepare in advance. Just show up and tell her what matters to you.",
+          },
+        },
       ],
     },
   ],
@@ -417,6 +458,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <link rel="preconnect" href="https://forms.caltechweb.com" />
+      </head>
       <body className="min-h-full flex flex-col">
         {children}
         <script
