@@ -607,24 +607,22 @@ export default function Home() {
                 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6"
                 style={{ color: NEAR_BLACK }}
               >
-                <span className="sm:hidden">Medi-Cal Covered{" "}
-                  <span style={{ color: TEAL }}>Doula Care</span> in LA
+                <span className="sm:hidden">Doula Care,{" "}
+                  <span style={{ color: TEAL }}>Covered by Medi-Cal</span>
                 </span>
-                <span className="hidden sm:inline">Take Advantage of{" "}
+                <span className="hidden sm:inline">Your Medi-Cal Covers{" "}
                   <span style={{ color: TEAL }}>
-                    Insurance Covered Doula Care
-                  </span>{" "}
-                  Today
+                    Expert Doula Care
+                  </span>
                 </span>
               </h1>
               <p
                 className="text-lg lg:text-xl mb-8 leading-relaxed"
                 style={{ color: "#333" }}
               >
-                Most families don&apos;t know doula care can be covered by
-                Medi-Cal. EH Nursing was built to change that. A nurse
-                practitioner by your side from your first prenatal visit through
-                postpartum, at no out-of-pocket cost for qualifying families.
+                Nurse-led prenatal, birth, and postpartum support for Los
+                Angeles families on Medi-Cal, at no out-of-pocket cost for
+                qualifying families.
               </p>
 
               {/* Call CTA */}
@@ -962,7 +960,7 @@ export default function Home() {
             className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
             style={{ color: "#fff" }}
           >
-            What the Research Found
+            Doulas Change Birth Outcomes
           </h2>
           <p
             className="text-lg text-center max-w-2xl mx-auto mb-14"
