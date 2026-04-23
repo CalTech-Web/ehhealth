@@ -347,7 +347,7 @@ function ContactForm({ id }: { id?: string }) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-xl font-bold text-base tracking-wide transition-all disabled:opacity-60 hover:brightness-110 active:scale-[0.98]"
+        className="w-full py-4 rounded-xl font-bold text-base tracking-wide transition-all disabled:opacity-60 hover:brightness-110 active:scale-[0.98] cta-shimmer"
         style={{ background: "linear-gradient(135deg, #3d8080 0%, #658B8B 100%)", color: "#fff", boxShadow: "0 4px 16px rgba(101,139,139,0.45)" }}
       >
         {loading ? "Sending..." : "Check My Coverage"}
@@ -664,6 +664,16 @@ export default function Home() {
     },
   ];
 
+  const [navScrolled, setNavScrolled] = useState(false);
+
+  useEffect(() => {
+    function onNavScroll() {
+      setNavScrolled(window.scrollY > 20);
+    }
+    window.addEventListener("scroll", onNavScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onNavScroll);
+  }, []);
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) =>
@@ -684,8 +694,15 @@ export default function Home() {
       <ScrollProgressBar />
       {/* ── NAV ─────────────────────────────────────────── */}
       <nav
-        className="sticky top-0 z-50 w-full px-6 py-3 flex items-center justify-between shadow-sm"
-        style={{ backgroundColor: "#fff", borderBottom: `1px solid ${BORDER}` }}
+        className="sticky top-0 z-50 w-full px-6 py-3 flex items-center justify-between"
+        style={{
+          backgroundColor: navScrolled ? "rgba(255,255,255,0.78)" : "#fff",
+          borderBottom: `1px solid ${BORDER}`,
+          backdropFilter: navScrolled ? "blur(18px) saturate(180%)" : "none",
+          WebkitBackdropFilter: navScrolled ? "blur(18px) saturate(180%)" : "none",
+          boxShadow: navScrolled ? "0 2px 24px rgba(0,0,0,0.08)" : "0 1px 3px rgba(0,0,0,0.05)",
+          transition: "background-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease",
+        }}
       >
         <a href="/" aria-label="EH Nursing and Wellness Services Home" className="flex flex-col leading-tight">
           <span className="text-base font-extrabold tracking-tight" style={{ color: NEAR_BLACK }}>EH Nursing</span>
@@ -701,7 +718,7 @@ export default function Home() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center text-sm font-bold px-5 py-2.5 rounded-full transition-opacity hover:opacity-90"
+            className="inline-flex items-center text-sm font-bold px-5 py-2.5 rounded-full transition-opacity hover:opacity-90 cta-shimmer"
             style={{ backgroundColor: TEAL, color: "#fff" }}
           >
             Apply Now

@@ -140,6 +140,30 @@ body {
   animation-delay: 0.5s;
 }
 
+/* ─── CTA shimmer sweep ─────────────────────────────── */
+@keyframes btn-shimmer {
+  0%, 60% { left: -80%; }
+  100%    { left: 160%; }
+}
+
+.cta-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -80%;
+  width: 50%;
+  height: 120%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.28) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: btn-shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }
