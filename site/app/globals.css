@@ -251,6 +251,20 @@ body {
 .reveal.in-view .stars-row .star-anim:nth-child(4) { color: #F4A93F; transform: scale(1); transition-delay: 1.35s; }
 .reveal.in-view .stars-row .star-anim:nth-child(5) { color: #F4A93F; transform: scale(1); transition-delay: 1.50s; }
 
+/* ─── How It Works step circle sequential pop ──────── */
+@keyframes step-circle-pop {
+  0%   { transform: scale(1);    box-shadow: 0 0 0 0   rgba(101,139,139,0.72); }
+  35%  { transform: scale(1.18); box-shadow: 0 0 0 10px rgba(101,139,139,0); }
+  65%  { transform: scale(0.93); }
+  100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(101,139,139,0); }
+}
+
+.reveal.in-view .step-circle[data-step="1"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.50s both; }
+.reveal.in-view .step-circle[data-step="2"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 0.85s both; }
+.reveal.in-view .step-circle[data-step="3"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 1.20s both; }
+.reveal.in-view .step-circle[data-step="4"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 1.55s both; }
+.reveal.in-view .step-circle[data-step="5"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 1.90s both; }
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }

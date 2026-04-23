@@ -1065,7 +1065,8 @@ export default function Home() {
               style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.1}s` }}
             >
               <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4 relative z-10"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4 relative z-10 step-circle"
+                data-step={item.step}
                 style={{ backgroundColor: TEAL }}
               >
                 {item.step}
