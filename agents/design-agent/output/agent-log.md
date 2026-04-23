@@ -66,3 +66,8 @@ Deployment is live. The visual enhancement: the doula image band now has a **par
 [2026-04-23 10:22:45] Run #2 starting (model: sonnet)
 Deployment succeeded. Service cards in the Services section now have an image zoom + teal gradient overlay on hover. Hovering a card zooms the photo to scale(1.07) with a 0.55s ease transition, and a teal-to-transparent gradient overlay (rgba(101,139,139,0.55)) fades in from the bottom of the image. Implemented with two new CSS classes (`.service-img`, `.service-img-overlay`) and a `.service-card` parent selector. No JS added.
 [2026-04-23 10:22:45] Run #2 finished
+Deployment is live. The visual enhancement: hovering any of the 9 service cards on ehhealth.org now zooms the photo to `scale(1.07)` with a smooth 0.55s ease, and a teal gradient overlay fades up from the bottom of the image, giving the services grid a polished, magazine-style feel. Pure CSS, no JavaScript added.
+[2026-04-23] Run #3 finished
+Deployment succeeded. Added an animated connector line to the "How It Works" 5-step section. On desktop, a teal horizontal line (opacity 0.35) sits at the level of the numbered step circles and grows from left to right via a CSS scaleX animation (1.4s, cubic-bezier ease) when the section scrolls into view. The line is observed by the existing IntersectionObserver. Step number circles have z-index 10 so they visually sit above the line, creating a path/journey visualization between all 5 steps.
+[2026-04-23 10:25:51] Run #2 finished
+[2026-04-23 10:25:56] Run #3 starting (model: sonnet)
