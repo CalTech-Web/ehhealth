@@ -284,7 +284,7 @@ function ContactForm({ id }: { id?: string }) {
         className="w-full py-4 rounded-lg font-bold text-base tracking-wide transition-opacity disabled:opacity-60"
         style={{ backgroundColor: TEAL, color: "#fff" }}
       >
-        {loading ? "Sending..." : "Request an Appointment"}
+        {loading ? "Sending..." : "Check My Coverage"}
       </button>
 
       <p className="text-xs text-center" style={{ color: "#888" }}>
@@ -678,11 +678,11 @@ export default function Home() {
                 className="text-xl font-bold mb-1"
                 style={{ color: NEAR_BLACK }}
               >
-                Request an Appointment
+                Find Out If You Qualify
               </h2>
               <p className="text-sm mb-5" style={{ color: "#666" }}>
-                Fill out the form and we will reach out within one business day
-                to schedule your initial assessment visit.
+                Tell us your Medi-Cal plan and we will confirm your coverage
+                before your first visit. No cost, no obligation.
               </p>
               <ContactForm id="contact-hero" />
             </div>
@@ -1304,10 +1304,10 @@ export default function Home() {
                 className="text-xl font-bold mb-1"
                 style={{ color: NEAR_BLACK }}
               >
-                Request an Appointment
+                Apply for Covered Doula Care
               </h3>
               <p className="text-sm mb-6" style={{ color: "#666" }}>
-                Fill out the form below and we will contact you within one
+                We will confirm your Medi-Cal coverage and reach out within one
                 business day.
               </p>
               <ContactForm id="contact-section" />
