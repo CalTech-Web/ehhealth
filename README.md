@@ -1,13 +1,3 @@
-# ehhealth
-
-## Agents
-
-```
-WORK=/Users/brandonhopkins/Projects/ehhealth/agents/cro-agent MODEL="sonnet" MAX_LOOPS=3 bash ~/Projects/claude-lab/ENGINE/run.sh
-```
-
----
-
 # New Client Website - Orchestration Spec
 
 Follow every step in order. Spawn each agent using the Agent tool with `model="sonnet"`. Do not proceed to the next step until the current agent returns its required success signal. Never skip a step. Never start building before Step 1 is complete.
@@ -96,16 +86,16 @@ Claude will create the Cloudflare widget, add the frontend snippet to the site's
 Run these four bash commands one at a time, in order. Wait for each to finish before running the next. Set a timeout for each task to 60 minutes. Substitute `CLIENT_NAME` with the actual folder name.
 
 ```
-WORK=/Users/brandonhopkins/Projects/CLIENT_NAME/agents/design-agent MODEL="sonnet" MAX_LOOPS=5 bash ~/Projects/claude-lab/ENGINE/run.sh
+WORK=/Users/brandonhopkins/Projects/ehhealth/agents/design-agent MODEL="sonnet" MAX_LOOPS=5 bash ~/Projects/claude-lab/ENGINE/run.sh
 ```
 ```
-WORK=/Users/brandonhopkins/Projects/CLIENT_NAME/agents/content-agent MODEL="sonnet" MAX_LOOPS=5 bash ~/Projects/claude-lab/ENGINE/run.sh
+WORK=/Users/brandonhopkins/Projects/ehhealth/agents/cro-agent MODEL="sonnet" MAX_LOOPS=3 bash ~/Projects/claude-lab/ENGINE/run.sh
 ```
 ```
-WORK=/Users/brandonhopkins/Projects/CLIENT_NAME/agents/seo-agent MODEL="sonnet" MAX_LOOPS=5 bash ~/Projects/claude-lab/ENGINE/run.sh
+WORK=/Users/brandonhopkins/Projects/ehhealth/agents/seo-agent MODEL="sonnet" MAX_LOOPS=5 bash ~/Projects/claude-lab/ENGINE/run.sh
 ```
 ```
-WORK=/Users/brandonhopkins/Projects/CLIENT_NAME/agents/pagespeed-agent MODEL="sonnet" MAX_LOOPS=2 bash ~/Projects/claude-lab/ENGINE/run.sh
+WORK=/Users/brandonhopkins/Projects/ehhealth/agents/pagespeed-agent MODEL="sonnet" MAX_LOOPS=2 bash ~/Projects/claude-lab/ENGINE/run.sh
 ```
 
 **Do not proceed to Step 5 until all four agents have exited.**
