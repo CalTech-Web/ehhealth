@@ -133,7 +133,7 @@ function ContactForm({ id }: { id?: string }) {
             value={form.name}
             onChange={handleChange}
             placeholder="Your full name"
-            className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none"
+            className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none focus:ring-2 focus:ring-[#658B8B] focus:border-[#658B8B] transition-shadow"
             style={{
               borderColor: BORDER,
               backgroundColor: "#fff",
@@ -157,7 +157,7 @@ function ContactForm({ id }: { id?: string }) {
             value={form.phone}
             onChange={handleChange}
             placeholder="(000) 000-0000"
-            className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none"
+            className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none focus:ring-2 focus:ring-[#658B8B] focus:border-[#658B8B] transition-shadow"
             style={{ borderColor: BORDER, backgroundColor: "#fff", color: NEAR_BLACK }}
           />
         </div>
@@ -199,7 +199,7 @@ function ContactForm({ id }: { id?: string }) {
             value={form.dueDate}
             onChange={handleChange}
             placeholder="e.g. August 2026"
-            className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none"
+            className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none focus:ring-2 focus:ring-[#658B8B] focus:border-[#658B8B] transition-shadow"
             style={{ borderColor: BORDER, backgroundColor: "#fff", color: NEAR_BLACK }}
           />
         </div>
@@ -216,7 +216,7 @@ function ContactForm({ id }: { id?: string }) {
             name="plan"
             value={form.plan}
             onChange={handleChange}
-            className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none"
+            className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none focus:ring-2 focus:ring-[#658B8B] focus:border-[#658B8B] transition-shadow"
             style={{ borderColor: BORDER, backgroundColor: "#fff", color: NEAR_BLACK }}
           >
             <option value="">Select your plan</option>
@@ -258,31 +258,11 @@ function ContactForm({ id }: { id?: string }) {
         </select>
       </div>
 
-      <div>
-        <label
-          htmlFor={`message-${id}`}
-          className="block text-sm font-semibold mb-1"
-          style={{ color: NEAR_BLACK }}
-        >
-          Anything else you&apos;d like us to know
-        </label>
-        <textarea
-          id={`message-${id}`}
-          name="message"
-          rows={3}
-          value={form.message}
-          onChange={handleChange}
-          placeholder="Optional message..."
-          className="w-full rounded-lg px-4 py-3 text-sm border focus:outline-none resize-none"
-          style={{ borderColor: BORDER, backgroundColor: "#fff", color: NEAR_BLACK }}
-        />
-      </div>
-
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-lg font-bold text-base tracking-wide transition-opacity disabled:opacity-60"
-        style={{ backgroundColor: TEAL, color: "#fff" }}
+        className="w-full py-4 rounded-xl font-bold text-base tracking-wide transition-all disabled:opacity-60 hover:brightness-110 active:scale-[0.98]"
+        style={{ background: "linear-gradient(135deg, #3d8080 0%, #658B8B 100%)", color: "#fff", boxShadow: "0 4px 16px rgba(101,139,139,0.45)" }}
       >
         {loading ? "Sending..." : "Check My Coverage"}
       </button>
@@ -671,20 +651,19 @@ export default function Home() {
 
             {/* Right: inline contact form */}
             <div
-              className="rounded-2xl p-6 lg:p-8"
-              style={{ backgroundColor: "#fff", boxShadow: "0 8px 40px rgba(101,139,139,0.18), 0 2px 8px rgba(0,0,0,0.08)", border: `1px solid ${BORDER}` }}
+              className="rounded-2xl overflow-hidden"
+              style={{ boxShadow: "0 8px 40px rgba(101,139,139,0.18), 0 2px 8px rgba(0,0,0,0.08)", border: `1px solid ${BORDER}` }}
             >
-              <h2
-                className="text-xl font-bold mb-1"
-                style={{ color: NEAR_BLACK }}
-              >
-                Find Out If You Qualify
-              </h2>
-              <p className="text-sm mb-5" style={{ color: "#666" }}>
-                Tell us your Medi-Cal plan and we will confirm your coverage
-                before your first visit. No cost, no obligation.
-              </p>
-              <ContactForm id="contact-hero" />
+              <div className="px-6 lg:px-8 pt-6 pb-5" style={{ background: "linear-gradient(135deg, #658B8B 0%, #4a7575 100%)" }}>
+                <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ backgroundColor: "rgba(215,247,247,0.25)", color: "#fff" }}>Free Coverage Check</span>
+                <h2 className="text-xl font-bold mb-1" style={{ color: "#fff" }}>Find Out If You Qualify</h2>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
+                  Tell us your Medi-Cal plan and we will confirm your coverage before your first visit. No cost, no obligation.
+                </p>
+              </div>
+              <div className="px-6 lg:px-8 py-6" style={{ backgroundColor: "#fff" }}>
+                <ContactForm id="contact-hero" />
+              </div>
             </div>
           </div>
         </div>
@@ -1319,20 +1298,19 @@ export default function Home() {
 
             {/* Right: form */}
             <div
-              className="rounded-2xl p-6 lg:p-8"
-              style={{ backgroundColor: "#fff" }}
+              className="rounded-2xl overflow-hidden"
+              style={{ boxShadow: "0 8px 40px rgba(101,139,139,0.18), 0 2px 8px rgba(0,0,0,0.08)", border: `1px solid ${BORDER}` }}
             >
-              <h3
-                className="text-xl font-bold mb-1"
-                style={{ color: NEAR_BLACK }}
-              >
-                Apply for Covered Doula Care
-              </h3>
-              <p className="text-sm mb-6" style={{ color: "#666" }}>
-                We will confirm your Medi-Cal coverage and reach out within one
-                business day.
-              </p>
-              <ContactForm id="contact-section" />
+              <div className="px-6 lg:px-8 pt-6 pb-5" style={{ background: "linear-gradient(135deg, #658B8B 0%, #4a7575 100%)" }}>
+                <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ backgroundColor: "rgba(215,247,247,0.25)", color: "#fff" }}>Free Coverage Check</span>
+                <h3 className="text-xl font-bold mb-1" style={{ color: "#fff" }}>Apply for Covered Doula Care</h3>
+                <p className="text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>
+                  We will confirm your Medi-Cal coverage and reach out within one business day.
+                </p>
+              </div>
+              <div className="px-6 lg:px-8 py-6" style={{ backgroundColor: "#fff" }}>
+                <ContactForm id="contact-section" />
+              </div>
             </div>
           </div>
         </div>
