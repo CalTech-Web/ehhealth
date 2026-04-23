@@ -945,16 +945,17 @@ export default function Home() {
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="rounded-2xl overflow-hidden border flex flex-col reveal card-hover"
+                className="rounded-2xl overflow-hidden border flex flex-col reveal card-hover service-card"
                 style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${(i % 3) * 0.1}s` }}
               >
-                <div className="relative h-44">
+                <div className="relative h-44 overflow-hidden">
                   <img
                     src={s.img}
                     alt={s.title}
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full service-img"
                     loading="lazy"
                   />
+                  <div className="service-img-overlay" aria-hidden="true" />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
                   <h3
