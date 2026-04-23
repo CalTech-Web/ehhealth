@@ -91,3 +91,28 @@ Changes shipped:
 5. Keyword expansion — 14 new terms: doula Encino, doula Northridge, doula Studio City, doula Pasadena, doula Culver City, doula Hawthorne, doula Inglewood, hospital birth doula Los Angeles, home birth doula Los Angeles, NICU nurse doula Los Angeles, doula for teen moms Los Angeles, LGBTQ doula Los Angeles, nurse practitioner doula Los Angeles, doula domestic violence support Los Angeles
 6. LCP improvement — added priority prop to the doula image band (full-width above-the-fold image); prevents the browser from lazy-loading a large above-fold image
 [2026-04-22] Run #4 finished
+SEO run #4 is complete and live on production. Here's what shipped:
+
+**Structured data (`layout.tsx`):**
+- Standalone `Person` schema for Ellen Hakopyan in `@graph` with `hasCredential` (Nurse Practitioner, Pediatric/Neonatal ICU Nurse) and `knowsAbout` array. The LocalBusiness `founder` now references it by `@id` instead of duplicating the data, which is the correct linked-data pattern.
+- `HowTo` schema for "How to Get Medi-Cal Covered Doula Care in Los Angeles" with 5 `HowToStep` nodes mapping to the existing "How It Works" section. This is a distinct rich result type that can appear in Google Search with step-by-step formatting.
+- `slogan` and `currenciesAccepted` added to LocalBusiness
+- 9th FAQ: "Can a doula attend my hospital birth or home birth in Los Angeles?" added to FAQPage schema
+
+**Page content (`page.tsx`):**
+- 9th FAQ displayed in accordion targeting "hospital birth doula Los Angeles" and "home birth doula Los Angeles" queries
+- `priority` prop added to the doula image band (a large full-width above-fold image that was previously being lazy-loaded, hurting LCP)
+
+**Keywords:** 14 new terms covering remaining LA cities (Encino, Northridge, Studio City, Pasadena, Culver City, Hawthorne, Inglewood) and demographic-specific searches (teen moms, LGBTQ, domestic violence, NICU nurse doula, nurse practitioner doula)
+[2026-04-22 17:12:30] Run #4 finished
+[2026-04-22 17:12:35] Run #5 starting (model: sonnet)
+[2026-04-22] SEO run #5 complete. Deployed to production.
+
+Changes shipped:
+1. WebPage schema — new @graph node for the homepage with datePublished (2025-01-01), dateModified (2026-04-22), about, isPartOf, inLanguage, and BreadcrumbList; gives Google a proper page-level entity separate from the organization
+2. foundingDate + legalName — added to LocalBusiness schema ("2025" and "EH Nursing and Wellness Services"); enriches the Knowledge Panel
+3. openingHoursSpecification — replaced the plain openingHours string with the structured OpeningHoursSpecification array; Google's preferred format for Knowledge Panel hours
+4. 10th FAQ — "What happens at the initial assessment visit?" added to both FAQPage JSON-LD schema and the on-page accordion; targets high-intent pre-booking queries and maps to the first service step
+5. Keyword expansion — 6 new terms: prenatal doula Los Angeles, postpartum doula Medi-Cal Los Angeles, doula birth center Los Angeles, doula for first-time mothers Los Angeles, Medi-Cal approved doula 2025, Van Nuys prenatal support
+6. preconnect — added <link rel="preconnect" href="https://forms.caltechweb.com"> in <head> to reduce DNS and TCP latency for form submissions; indirect Core Web Vitals benefit
+[2026-04-22 17:25:00] Run #5 finished
