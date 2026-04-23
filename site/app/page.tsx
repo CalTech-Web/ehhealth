@@ -491,6 +491,10 @@ export default function Home() {
       q: "How much does doula care cost with Medi-Cal?",
       a: "If you have a qualifying Medi-Cal Managed Care plan, doula services through EH Nursing are covered at no out-of-pocket cost to you. That includes LA Care, Kaiser Permanente Southern CA, HealthNet, CalOptima, and other Medi-Cal HMO plans. We verify your coverage before your first visit so there are no surprises.",
     },
+    {
+      q: "Can a doula attend my hospital birth or home birth in Los Angeles?",
+      a: "Yes. Ellen attends both hospital births and home births throughout Los Angeles County. As a mobile provider, she comes to wherever you plan to deliver. For hospital births she works alongside your OB and nursing team. For home births she coordinates with your midwife. No office visit is ever required.",
+    },
   ];
 
   const [showStickyBar, setShowStickyBar] = useState(false);
@@ -759,6 +763,7 @@ export default function Home() {
           alt="Doula supporting a mother during birth"
           fill
           sizes="100vw"
+          priority
           className="object-cover"
         />
         <div

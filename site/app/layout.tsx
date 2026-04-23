@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "EH Nursing is a Medi-Cal approved doula provider in Los Angeles. Nurse-led prenatal, birth, and postpartum support at no out-of-pocket cost for qualifying families. Call (833) 912-3999.",
   keywords:
-    "doula Los Angeles, Medi-Cal doula, nurse practitioner doula, prenatal support, postpartum care, VBAC support, LA Care doula, postpartum doula Los Angeles, birth doula Medi-Cal, insurance covered doula, Van Nuys doula, nurse doula Los Angeles, CalOptima doula, HealthNet doula, Kaiser doula Medi-Cal, doula covered by insurance Los Angeles, how much does a doula cost Medi-Cal, VBAC doula Los Angeles, cesarean birth doula, pregnancy loss doula, abortion support doula, doula Van Nuys CA, doula North Hollywood, doula Sherman Oaks, doula Burbank, doula Glendale, nurse led doula Los Angeles County, Medi-Cal HMO doula provider, doula at no cost Medi-Cal",
+    "doula Los Angeles, Medi-Cal doula, nurse practitioner doula, prenatal support, postpartum care, VBAC support, LA Care doula, postpartum doula Los Angeles, birth doula Medi-Cal, insurance covered doula, Van Nuys doula, nurse doula Los Angeles, CalOptima doula, HealthNet doula, Kaiser doula Medi-Cal, doula covered by insurance Los Angeles, how much does a doula cost Medi-Cal, VBAC doula Los Angeles, cesarean birth doula, pregnancy loss doula, abortion support doula, doula Van Nuys CA, doula North Hollywood, doula Sherman Oaks, doula Burbank, doula Glendale, nurse led doula Los Angeles County, Medi-Cal HMO doula provider, doula at no cost Medi-Cal, doula Encino, doula Northridge, doula Studio City, doula Pasadena, doula Culver City, doula Hawthorne, doula Inglewood, hospital birth doula Los Angeles, home birth doula Los Angeles, NICU nurse doula Los Angeles, doula for teen moms Los Angeles, LGBTQ doula Los Angeles, nurse practitioner doula Los Angeles, doula domestic violence support Los Angeles",
   authors: [{ name: "EH Nursing and Wellness Services", url: "https://ehhealth.org" }],
   creator: "EH Nursing and Wellness Services",
   publisher: "EH Nursing and Wellness Services",
@@ -107,8 +107,10 @@ const jsonLd = {
         name: "NPI",
         value: "1710798616",
       },
+      slogan: "Take Advantage of Insurance Covered Doula Care Today",
       serviceType: "Doula Services",
       priceRange: "Covered by Medi-Cal Managed Care",
+      currenciesAccepted: "USD",
       paymentAccepted: "Medi-Cal, LA Care, Kaiser, HealthNet, CalOptima",
       openingHours: "Mo-Fr 09:00-18:00",
       contactPoint: [
@@ -228,17 +230,7 @@ const jsonLd = {
         worstRating: "1",
       },
       sameAs: [],
-      founder: {
-        "@type": "Person",
-        "@id": "https://ehhealth.org/#ellen-hakopyan",
-        name: "Ellen Hakopyan",
-        jobTitle: "Founder, Lead Doula, Nurse Practitioner",
-        description:
-          "Pediatric and Neonatal ICU Nurse and Nurse Practitioner with years of experience caring for newborns, children, and families. Medi-Cal approved doula provider in Los Angeles.",
-        worksFor: {
-          "@id": "https://ehhealth.org/#organization",
-        },
-      },
+      founder: { "@id": "https://ehhealth.org/#ellen-hakopyan" },
     },
     {
       "@type": "Review",
@@ -266,6 +258,76 @@ const jsonLd = {
       author: { "@type": "Person", name: "Alyssa M." },
       reviewBody:
         "The postpartum support was something I did not expect to need this much. It helped me adjust and feel more confident caring for my baby.",
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ehhealth.org/#ellen-hakopyan",
+      name: "Ellen Hakopyan",
+      jobTitle: "Founder, Lead Doula, Nurse Practitioner",
+      description:
+        "Pediatric and Neonatal ICU Nurse and Nurse Practitioner with years of experience caring for newborns, children, and families. Medi-Cal approved doula provider in Los Angeles.",
+      worksFor: { "@id": "https://ehhealth.org/#organization" },
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "Nurse Practitioner",
+          credentialCategory: "degree",
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "Pediatric and Neonatal ICU Nurse",
+          credentialCategory: "certification",
+        },
+      ],
+      knowsAbout: [
+        "Doula Support",
+        "Prenatal Care",
+        "Birth Support",
+        "Postpartum Care",
+        "VBAC Support",
+        "Medi-Cal Coverage",
+        "Neonatal Nursing",
+        "Pediatric Nursing",
+      ],
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://ehhealth.org/#how-to-get-doula-care",
+      name: "How to Get Medi-Cal Covered Doula Care in Los Angeles",
+      description:
+        "Steps to start receiving nurse-led doula care covered by your Medi-Cal plan in Los Angeles.",
+      step: [
+        {
+          "@type": "HowToStep",
+          position: 1,
+          name: "Reach Out",
+          text: "Call (833) 912-3999 or fill out the contact form at ehhealth.org. Share your due date, your Medi-Cal plan, and the type of support you are looking for. We respond within one business day.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 2,
+          name: "Initial Assessment",
+          text: "Ellen meets with you to hear your story, review your history, and understand what matters most. You leave with a written support plan built around your goals.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 3,
+          name: "Prenatal Sessions",
+          text: "Regular check-ins before your due date covering birth planning, comfort techniques, and the questions that come up along the way. Same provider every time.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 4,
+          name: "Birth Support",
+          text: "Ellen arrives in early labor and stays through delivery. She works alongside your medical team throughout, advocating for your preferences from start to finish.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 5,
+          name: "Postpartum Care",
+          text: "After birth, Ellen checks in on feeding, recovery, and newborn care. If something is not working, you figure it out together, not on your own.",
+        },
+      ],
     },
     {
       "@type": "FAQPage",
@@ -333,6 +395,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "If you have a qualifying Medi-Cal Managed Care plan, doula services through EH Nursing are covered at no out-of-pocket cost to you. That includes LA Care, Kaiser Permanente Southern CA, HealthNet, CalOptima, and other Medi-Cal HMO plans. We verify your coverage before your first visit so there are no surprises.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can a doula attend my hospital birth or home birth in Los Angeles?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Ellen attends both hospital births and home births throughout Los Angeles County. As a mobile provider, she comes to wherever you plan to deliver. For hospital births she works alongside your OB and nursing team. For home births she coordinates with your midwife. No office visit is ever required.",
           },
         },
       ],
