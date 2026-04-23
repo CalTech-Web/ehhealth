@@ -23,3 +23,17 @@ All four CRO tasks are complete and pushed. Here's what changed:
 [2026-04-23 09:04:36] Run #2 starting (model: sonnet)
 [2026-04-23] Task A (Run 2) - Form commitment barrier: Form button "Request an Appointment" → "Check My Coverage"; hero form heading → "Find Out If You Qualify" with "No cost, no obligation" subtext; contact form heading → "Apply for Covered Doula Care".
 [2026-04-23] Task B (Run 2) - Contact section copy: H2 "Let's figure out if your plan covers this." → "Most LA families on Medi-Cal qualify. Let's confirm yours." Body copy adds explicit "there is no cost to find out" to preempt the #1 visitor objection.
+Run #2 complete. Two changes pushed:
+
+**Task A** — Form submit button changed from "Request an Appointment" → **"Check My Coverage"** across both form instances. Hero form heading changed to "Find Out If You Qualify" with explicit "No cost, no obligation" subtext. Contact form heading changed to "Apply for Covered Doula Care." These reframes reduce commitment anxiety, which is the primary conversion barrier for Medi-Cal families unsure if coverage is real.
+
+**Task B** — Contact section headline changed from the tentative "Let's figure out if your plan covers this." to **"Most LA families on Medi-Cal qualify. Let's confirm yours."** — positions qualification as the expected outcome rather than an unknown. Body copy adds "there is no cost to find out" to preempt the #1 objection before the visitor reaches the form.
+[2026-04-23 09:07:11] Run #2 finished
+[2026-04-23 09:07:16] Run #3 starting (model: sonnet)
+[2026-04-23] Task A (Run 3) - Stats section CTA: Added "See If You Qualify" button with "No cost. No obligation. Takes 60 seconds." subtext at the bottom of the dark impact stats section, capturing visitors at peak persuasion moment.
+[2026-04-23] Task B (Run 3) - Testimonials section CTA: Added "Apply Now" button with "No cost to apply. Coverage confirmed before your first visit." subtext at the bottom of the testimonials section, converting visitors motivated by social proof.
+Run #3 complete. Two changes pushed:
+
+**Task A** — Added a centered "See If You Qualify" CTA (MINT button on dark background) directly below the impact stats block ("4x lower risk", "2x fewer complications"). Visitors are at peak persuasion at that moment; previously the section ended with a research citation and no path to convert.
+
+**Task B** — Added a centered "Apply Now" CTA below the three 5-star testimonials. Reading peer social proof is a high-conversion trigger; previously the section ended with no action available, losing motivated visitors to the scroll.
