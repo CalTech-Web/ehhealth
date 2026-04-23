@@ -1389,6 +1389,9 @@ export default function Home() {
               <a href="/privacy-policy-and-tos" className="hover:text-white transition-colors">
                 Privacy Policy &amp; Terms
               </a>
+              <a href="https://caltechweb.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                Powered by Caltechweb
+              </a>
             </div>
           </div>
         </div>
