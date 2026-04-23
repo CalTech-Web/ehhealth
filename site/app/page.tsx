@@ -317,11 +317,17 @@ function FaqSection({
         Questions We Hear All the Time
       </p>
       <h2
-        className="text-3xl lg:text-4xl font-extrabold text-center mb-14"
+        className="text-3xl lg:text-4xl font-extrabold text-center mb-4"
         style={{ color: nearBlack }}
       >
         Frequently Asked Questions
       </h2>
+      <p
+        className="text-lg text-center max-w-2xl mx-auto mb-12"
+        style={{ color: "#555" }}
+      >
+        The questions we get most often, answered directly.
+      </p>
 
       <div className="space-y-4">
         {faqs.map((faq, i) => {
@@ -885,11 +891,17 @@ export default function Home() {
           What Happens When You Reach Out
         </p>
         <h2
-          className="text-3xl lg:text-4xl font-extrabold text-center mb-8 reveal"
+          className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
           style={{ color: NEAR_BLACK }}
         >
           From First Call to Postpartum
         </h2>
+        <p
+          className="text-lg text-center max-w-2xl mx-auto mb-10"
+          style={{ color: "#555" }}
+        >
+          Here is exactly what happens after you reach out.
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {[
