@@ -1003,6 +1003,17 @@ export default function Home() {
           <p className="text-xs text-center mt-8" style={{ color: "#777" }}>
             Based on published doula research studies.
           </p>
+
+          <div className="text-center mt-10">
+            <a
+              href="#contact"
+              className="inline-flex items-center font-bold text-base px-8 py-4 rounded-full transition-opacity hover:opacity-90"
+              style={{ backgroundColor: MINT, color: NEAR_BLACK }}
+            >
+              See If You Qualify
+            </a>
+            <p className="mt-3 text-xs" style={{ color: "#888" }}>No cost. No obligation. Takes 60 seconds.</p>
+          </div>
         </div>
       </section>
 
