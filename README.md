@@ -1,3 +1,13 @@
+# ehhealth
+
+## Agents
+
+```
+WORK=/Users/brandonhopkins/Projects/ehhealth/agents/cro-agent MODEL="sonnet" MAX_LOOPS=3 bash ~/Projects/claude-lab/ENGINE/run.sh
+```
+
+---
+
 # New Client Website - Orchestration Spec
 
 Follow every step in order. Spawn each agent using the Agent tool with `model="sonnet"`. Do not proceed to the next step until the current agent returns its required success signal. Never skip a step. Never start building before Step 1 is complete.
