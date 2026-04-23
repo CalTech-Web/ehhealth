@@ -675,7 +675,7 @@ export default function Home() {
         }),
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
-    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+    document.querySelectorAll(".reveal, .step-connector").forEach((el) => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
@@ -1005,7 +1005,14 @@ export default function Home() {
           Here is exactly what happens after you reach out.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div className="relative">
+          {/* Animated connector line between steps – desktop only */}
+          <div
+            className="step-connector hidden md:block absolute h-px"
+            style={{ top: "44px", left: "10%", right: "10%", backgroundColor: TEAL, opacity: 0.35 }}
+            aria-hidden="true"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {[
             {
               step: "1",
@@ -1039,7 +1046,7 @@ export default function Home() {
               style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.1}s` }}
             >
               <div
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4"
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4 relative z-10"
                 style={{ backgroundColor: TEAL }}
               >
                 {item.step}
@@ -1055,6 +1062,7 @@ export default function Home() {
               </p>
             </div>
           ))}
+          </div>
         </div>
       </section>
 

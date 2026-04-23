@@ -123,6 +123,23 @@ body {
   opacity: 1;
 }
 
+/* ─── How It Works connector line ──────────────────── */
+@keyframes connector-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.step-connector {
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.step-connector.in-view {
+  animation: connector-grow 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.5s;
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }
