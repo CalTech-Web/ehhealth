@@ -1176,15 +1176,15 @@ export default function Home() {
                 className="text-3xl lg:text-4xl font-extrabold mb-6"
                 style={{ color: "#fff" }}
               >
-                Let&apos;s figure out if your plan covers this.
+                Most LA families on Medi-Cal qualify. Let&apos;s confirm yours.
               </h2>
               <p
                 className="text-base leading-relaxed mb-8"
                 style={{ color: "#aaa" }}
               >
-                Fill out the form or call us directly. We will check your
-                Medi-Cal plan, answer your questions, and schedule your initial
-                assessment visit. One conversation is usually all it takes.
+                We will verify your Medi-Cal plan, answer your questions, and
+                schedule your initial assessment visit. One conversation is
+                usually all it takes, and there is no cost to find out.
               </p>
 
               {/* Phone */}
