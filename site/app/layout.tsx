@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://ehhealth.org",
   },
+  other: {
+    "geo.region": "US-CA",
+    "geo.placename": "Van Nuys, Los Angeles, California",
+  },
   openGraph: {
     type: "website",
     url: "https://ehhealth.org",
@@ -52,6 +56,16 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://ehhealth.org/#website",
+      url: "https://ehhealth.org",
+      name: "EH Nursing and Wellness Services",
+      description:
+        "Medi-Cal approved doula provider in Los Angeles offering nurse-led prenatal, birth, and postpartum support.",
+      publisher: { "@id": "https://ehhealth.org/#organization" },
+      inLanguage: "en-US",
+    },
+    {
       "@type": ["LocalBusiness", "MedicalBusiness"],
       "@id": "https://ehhealth.org/#organization",
       name: "EH Nursing and Wellness Services",
@@ -69,15 +83,141 @@ const jsonLd = {
         addressRegion: "CA",
         addressCountry: "US",
       },
-      areaServed: {
-        "@type": "AdministrativeArea",
-        name: "Los Angeles County, California",
+      areaServed: [
+        { "@type": "AdministrativeArea", name: "Los Angeles County, California" },
+        { "@type": "City", name: "Van Nuys, California" },
+        { "@type": "City", name: "North Hollywood, California" },
+        { "@type": "City", name: "Sherman Oaks, California" },
+        { "@type": "City", name: "Studio City, California" },
+        { "@type": "City", name: "Encino, California" },
+        { "@type": "City", name: "Northridge, California" },
+        { "@type": "City", name: "Reseda, California" },
+        { "@type": "City", name: "Woodland Hills, California" },
+        { "@type": "City", name: "Burbank, California" },
+        { "@type": "City", name: "Glendale, California" },
+        { "@type": "City", name: "Pasadena, California" },
+        { "@type": "City", name: "Inglewood, California" },
+        { "@type": "City", name: "Culver City, California" },
+        { "@type": "City", name: "Hawthorne, California" },
+      ],
+      identifier: {
+        "@type": "PropertyValue",
+        name: "NPI",
+        value: "1710798616",
       },
       serviceType: "Doula Services",
-      medicalSpecialty: "Midwifery",
       priceRange: "Covered by Medi-Cal Managed Care",
       paymentAccepted: "Medi-Cal, LA Care, Kaiser, HealthNet, CalOptima",
       openingHours: "Mo-Fr 09:00-18:00",
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+18339123999",
+          contactType: "customer service",
+          areaServed: "US-CA",
+          availableLanguage: "English",
+          hoursAvailable: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "18:00",
+          },
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: "+17472042325",
+          contactType: "customer service",
+          areaServed: "US-CA",
+          availableLanguage: "English",
+        },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Doula and Wellness Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Initial Assessment Visit",
+              description:
+                "Comprehensive first meeting to learn goals, preferences, and needs. Reviews history, clarifies doula support scope, and creates a personalized support plan.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Prenatal Support",
+              description:
+                "Personalized birth planning, anxiety and emotional support, VBAC preparation, and nutrition guidance through focused check-ins before birth.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Birth Doula Support",
+              description:
+                "Continuous, non-medical support from early labor through delivery. Comfort techniques, advocacy, and partner guidance for vaginal births.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "VBAC Support",
+              description:
+                "Specialized support for planning a vaginal birth after cesarean. Evidence-informed preparation, coping strategies, and care team communication.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Cesarean Birth Support",
+              description:
+                "Compassionate support before, during, and after a cesarean. Grounding techniques, partner support, and gentle recovery guidance.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Pregnancy Loss Support",
+              description:
+                "Sensitive, nonjudgmental care through miscarriage and stillbirth. Emotional support and resources respecting client pace and privacy.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Abortion Support",
+              description:
+                "Confidential, judgment-free support before, during, and after an abortion. Help with planning, logistics, emotional care, and post-procedure comfort.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Postpartum Support",
+              description:
+                "Focused check-ins after birth covering newborn care, feeding, soothing, sleep routines, and emotional support for new parents.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Extended Postpartum Visits",
+              description:
+                "Up to two additional scheduled postpartum visits for deeper guidance on feeding, soothing, recovery, and family adjustment.",
+            },
+          },
+        ],
+      },
       sameAs: [],
       founder: {
         "@type": "Person",
@@ -141,6 +281,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Greater Los Angeles County, and Ellen comes to you. No office visit, no commute, no parking to deal with. If you are in the Van Nuys area or anywhere across LA County, you are in the service area.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do I get started?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Call (833) 912-3999 or fill out the contact form on this page. Share your due date, your Medi-Cal plan, and the type of support you are looking for. We will reach out within one business day to schedule your initial assessment visit.",
           },
         },
       ],

@@ -483,6 +483,10 @@ export default function Home() {
       q: "What areas do you serve?",
       a: "Greater Los Angeles County, and Ellen comes to you. No office visit, no commute, no parking to deal with. If you are in the Van Nuys area or anywhere across LA County, you are in the service area.",
     },
+    {
+      q: "How do I get started?",
+      a: "Call (833) 912-3999 or fill out the contact form on this page. Share your due date, your Medi-Cal plan, and the type of support you are looking for. We will reach out within one business day to schedule your initial assessment visit.",
+    },
   ];
 
   const [showStickyBar, setShowStickyBar] = useState(false);
@@ -750,6 +754,7 @@ export default function Home() {
           src="/assets/gallery/doula-image.png"
           alt="Doula supporting a mother during birth"
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div
@@ -810,6 +815,7 @@ export default function Home() {
                     src={s.img}
                     alt={s.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -969,6 +975,7 @@ export default function Home() {
               src="/assets/team/nurse-ellen-profile.jpg"
               alt="Ellen Hakopyan, Founder and Lead Doula"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-top"
             />
           </div>
