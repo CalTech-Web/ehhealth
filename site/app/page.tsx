@@ -3,6 +3,38 @@
 import Image from "next/image";
 import { useState, useEffect, useRef, FormEvent } from "react";
 
+/* ─── Scroll progress bar ────────────────────────────── */
+function ScrollProgressBar() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    function onScroll() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <div
+      className="fixed top-0 left-0 right-0 z-[60] h-1"
+      style={{ backgroundColor: "rgba(101,139,139,0.12)" }}
+      aria-hidden="true"
+    >
+      <div
+        className="h-full"
+        style={{
+          width: `${progress}%`,
+          background: "linear-gradient(90deg, #658B8B 0%, #D7F7F7 100%)",
+          transition: "width 0.05s linear",
+        }}
+      />
+    </div>
+  );
+}
+
 /* ─── Sticky mobile "always visible" CTA ─────────────── */
 function StickyMobileCTA() {
   return (
@@ -595,6 +627,7 @@ export default function Home() {
 
   return (
     <main className="pb-20 sm:pb-0" style={{ backgroundColor: BODY_BG, color: NEAR_BLACK }}>
+      <ScrollProgressBar />
       {/* ── NAV ─────────────────────────────────────────── */}
       <nav
         className="sticky top-0 z-50 w-full px-6 py-3 flex items-center justify-between shadow-sm"
