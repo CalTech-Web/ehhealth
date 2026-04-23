@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 
 /* ─── Sticky mobile "always visible" CTA ─────────────── */
 function StickyMobileCTA() {
@@ -354,6 +354,72 @@ function FaqSection({
         })}
       </div>
     </section>
+  );
+}
+
+/* ─── Animated stat card ─────────────────────────────── */
+function AnimatedStatCard({
+  stat,
+  label,
+  index,
+}: {
+  stat: string;
+  label: string;
+  index: number;
+}) {
+  const [value, setValue] = useState(stat);
+  const ref = useRef<HTMLDivElement>(null);
+  const animated = useRef(false);
+
+  useEffect(() => {
+    const numMatch = stat.match(/^(\d+)x$/i);
+    if (!numMatch) return;
+    const target = parseInt(numMatch[1]);
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !animated.current) {
+          animated.current = true;
+          const duration = 1400;
+          const startTime = performance.now();
+          const animate = (now: number) => {
+            const elapsed = now - startTime;
+            const t = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const current = Math.round(1 + (target - 1) * eased);
+            setValue(`${current}x`);
+            if (t < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, [stat]);
+
+  return (
+    <div
+      ref={ref}
+      className="rounded-2xl p-8 text-center border reveal"
+      style={{
+        backgroundColor: "rgba(215,247,247,0.06)",
+        borderColor: "rgba(215,247,247,0.12)",
+        animationDelay: `${index * 0.15}s`,
+      }}
+    >
+      <p
+        className="text-6xl font-extrabold mb-3 tabular-nums"
+        style={{ color: MINT }}
+      >
+        {value}
+      </p>
+      <p className="text-base leading-relaxed" style={{ color: "#ddd" }}>
+        {label}
+      </p>
+    </div>
   );
 }
 
@@ -958,25 +1024,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((s, i) => (
-              <div
-                key={s.stat}
-                className="rounded-2xl p-8 text-center border reveal"
-                style={{
-                  backgroundColor: "rgba(215,247,247,0.06)",
-                  borderColor: "rgba(215,247,247,0.12)",
-                  animationDelay: `${i * 0.15}s`,
-                }}
-              >
-                <p
-                  className="text-6xl font-extrabold mb-3"
-                  style={{ color: MINT }}
-                >
-                  {s.stat}
-                </p>
-                <p className="text-base leading-relaxed" style={{ color: "#ddd" }}>
-                  {s.label}
-                </p>
-              </div>
+              <AnimatedStatCard key={s.stat} stat={s.stat} label={s.label} index={i} />
             ))}
           </div>
           <p className="text-xs text-center mt-8" style={{ color: "#777" }}>
