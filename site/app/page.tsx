@@ -1161,6 +1161,17 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="#contact"
+              className="inline-flex items-center font-bold text-base px-8 py-4 rounded-full transition-opacity hover:opacity-90"
+              style={{ backgroundColor: TEAL, color: "#fff" }}
+            >
+              Apply Now
+            </a>
+            <p className="mt-3 text-sm font-medium" style={{ color: TEAL }}>No cost to apply. Coverage confirmed before your first visit.</p>
+          </div>
         </div>
       </section>
 
