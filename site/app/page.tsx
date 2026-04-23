@@ -629,12 +629,12 @@ export default function Home() {
       >
         {/* Decorative blobs */}
         <div
-          className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-40 blur-3xl"
+          className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-40 blur-3xl hero-blob-1"
           style={{ backgroundColor: TEAL }}
           aria-hidden="true"
         />
         <div
-          className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-20 blur-3xl"
+          className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-20 blur-3xl hero-blob-2"
           style={{ backgroundColor: TEAL }}
           aria-hidden="true"
         />
