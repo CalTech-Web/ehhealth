@@ -798,22 +798,24 @@ export default function Home() {
               {/* Trust badges */}
               <div className="flex flex-wrap gap-3">
                 {[
-                  "Medi-Cal Approved",
-                  "Nurse-Led",
-                  "LGBTQ+ Friendly",
-                  "Mobile Provider",
-                  "No Office Visit Required",
-                ].map((badge) => (
+                  { label: "Medi-Cal Approved", tip: "Covered by LA Care, Kaiser, HealthNet & CalOptima" },
+                  { label: "Nurse-Led", tip: "Led by a registered nurse with 20+ years of clinical experience" },
+                  { label: "LGBTQ+ Friendly", tip: "Inclusive care for all families and gender identities" },
+                  { label: "Mobile Provider", tip: "We come to you, no travel required" },
+                  { label: "No Office Visit Required", tip: "Care delivered at your home or birth location" },
+                ].map(({ label, tip }, i) => (
                   <span
-                    key={badge}
-                    className="text-xs font-semibold px-3 py-1 rounded-full border"
+                    key={label}
+                    data-tip={tip}
+                    className="trust-badge text-xs font-semibold px-3 py-1 rounded-full border"
                     style={{
                       borderColor: TEAL,
                       color: TEAL,
                       backgroundColor: "rgba(101,139,139,0.08)",
+                      ["--badge-delay" as string]: `${0.35 + i * 0.1}s`,
                     }}
                   >
-                    {badge}
+                    {label}
                   </span>
                 ))}
               </div>

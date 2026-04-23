@@ -164,6 +164,51 @@ body {
   pointer-events: none;
 }
 
+/* ─── Trust badge hover + staggered entrance + tooltip ── */
+@keyframes badge-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.trust-badge {
+  position: relative;
+  cursor: default;
+  opacity: 0;
+  animation: badge-fade-in 0.45s ease forwards;
+  animation-delay: var(--badge-delay, 0.4s);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trust-badge:hover {
+  transform: scale(1.07) translateY(-1px);
+  box-shadow: 0 0 0 2px rgba(101,139,139,0.3), 0 4px 12px rgba(101,139,139,0.18);
+}
+
+.trust-badge::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #111111;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 50;
+  line-height: 1.4;
+}
+
+.trust-badge:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }
