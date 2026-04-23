@@ -237,6 +237,20 @@ body {
   animation: quote-fade-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
 }
 
+/* ─── Star rating sequential pop-in ────────────────── */
+.star-anim {
+  color: #D0D0D0;
+  display: inline-block;
+  transform: scale(0.7);
+  transition: color 0.2s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.reveal.in-view .stars-row .star-anim:nth-child(1) { color: #F4A93F; transform: scale(1); transition-delay: 0.90s; }
+.reveal.in-view .stars-row .star-anim:nth-child(2) { color: #F4A93F; transform: scale(1); transition-delay: 1.05s; }
+.reveal.in-view .stars-row .star-anim:nth-child(3) { color: #F4A93F; transform: scale(1); transition-delay: 1.20s; }
+.reveal.in-view .stars-row .star-anim:nth-child(4) { color: #F4A93F; transform: scale(1); transition-delay: 1.35s; }
+.reveal.in-view .stars-row .star-anim:nth-child(5) { color: #F4A93F; transform: scale(1); transition-delay: 1.50s; }
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }

@@ -1277,9 +1277,9 @@ export default function Home() {
                     <p className="text-xs mb-0.5" style={{ color: "#888" }}>
                       {t.role}
                     </p>
-                    <div className="flex gap-0.5">
+                    <div className="flex gap-0.5 stars-row">
                       {[1, 2, 3, 4, 5].map((s) => (
-                        <span key={s} style={{ color: "#F4A93F" }}>
+                        <span key={s} className="star-anim">
                           &#9733;
                         </span>
                       ))}
