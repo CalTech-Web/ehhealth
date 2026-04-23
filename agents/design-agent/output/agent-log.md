@@ -76,3 +76,19 @@ Deployment is live (`state: success`). The enhancement: on the "How It Works" se
 [2026-04-23 10:31:17] Run #4 starting (model: sonnet)
 Deployment succeeded. Added two visual enhancements: (1) Frosted-glass nav on scroll — when the user scrolls past 20px the sticky nav transitions from solid white to rgba(255,255,255,0.78) + backdrop-filter: blur(18px) saturate(180%) with a 0.35s ease transition, giving it a polished glass-panel feel. (2) CTA shimmer sweep — a periodic diagonal white highlight (skewX -20deg, 50% width, 4s cycle) sweeps across the "Apply Now" nav button and the "Check My Coverage" submit button via a CSS `::after` pseudo-element, drawing the eye to the primary conversion actions.
 [2026-04-23 10:31:17] Run #4 finished
+Deployment succeeded. Two visual upgrades are now live on ehhealth.org:
+
+1. **Frosted-glass nav on scroll** — the sticky nav smoothly transitions from solid white to a semi-transparent `rgba(255,255,255,0.78)` + `backdrop-filter: blur(18px)` glass panel when the user scrolls past 20px, with a 0.35s ease transition.
+
+2. **CTA shimmer sweep** — the "Apply Now" nav button and "Check My Coverage" form submit button now have a periodic diagonal white highlight that sweeps across every 4 seconds (via a CSS `::after` pseudo-element), drawing the eye to the primary conversion actions.
+[2026-04-23 10:34:10] Run #4 finished
+[2026-04-23 10:34:15] Run #5 starting (model: sonnet)
+Deployment succeeded. The trust badge enhancements are live:
+
+- **Staggered fade-in**: Each badge animates in sequentially (0.35s, 0.45s, 0.55s, 0.65s, 0.75s delays) when the hero loads
+- **Hover scale/glow**: Badges scale up 7% with a teal ring glow on hover
+- **CSS tooltips**: Each badge shows a contextual tooltip above it on hover with details like "Covered by LA Care, Kaiser, HealthNet & CalOptima"
+[2026-04-23 10:42:12] Run #5 finished
+[2026-04-23 10:42:17] Run #6 starting (model: sonnet)
+Deployment succeeded. Added an animated underline-draw effect to the hero headline's teal key phrases: "Expert Doula Care" (desktop) and "Covered by Medi-Cal" (mobile) now get a 3px teal underline that sweeps from left to right over 0.8s (with a 0.5s page-load delay) using a CSS `background-size` animation. Pure CSS, no JS added. Draws the eye to the primary value proposition at the top of the page.
+[2026-04-23 10:42:17] Run #6 finished
