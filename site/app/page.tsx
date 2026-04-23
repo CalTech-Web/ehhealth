@@ -3,6 +3,31 @@
 import Image from "next/image";
 import { useState, useEffect, FormEvent } from "react";
 
+/* ─── Sticky mobile "always visible" CTA ─────────────── */
+function StickyMobileCTA() {
+  return (
+    <div
+      className="fixed bottom-0 left-0 right-0 z-40 flex gap-3 px-4 py-3 sm:hidden"
+      style={{ backgroundColor: "#fff", borderTop: "1px solid #DBDBDB", boxShadow: "0 -4px 24px rgba(0,0,0,0.10)" }}
+    >
+      <a
+        href="tel:8339123999"
+        className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full border-2 font-bold text-sm"
+        style={{ borderColor: "#658B8B", color: "#658B8B" }}
+      >
+        &#9990; Call Now
+      </a>
+      <a
+        href="#contact"
+        className="flex-1 flex items-center justify-center py-3 rounded-full font-bold text-sm"
+        style={{ backgroundColor: "#658B8B", color: "#fff" }}
+      >
+        Apply Now
+      </a>
+    </div>
+  );
+}
+
 /* ─── Brand colors ─────────────────────────────────── */
 const MINT = "#D7F7F7";
 const NEAR_BLACK = "#111111";
@@ -501,14 +526,6 @@ export default function Home() {
     },
   ];
 
-  const [showStickyBar, setShowStickyBar] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setShowStickyBar(window.scrollY > 500);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) =>
@@ -525,7 +542,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main style={{ backgroundColor: BODY_BG, color: NEAR_BLACK }}>
+    <main className="pb-20 sm:pb-0" style={{ backgroundColor: BODY_BG, color: NEAR_BLACK }}>
       {/* ── NAV ─────────────────────────────────────────── */}
       <nav
         className="sticky top-0 z-50 w-full px-6 py-3 flex items-center justify-between shadow-sm"
@@ -544,14 +561,14 @@ export default function Home() {
         <div className="flex items-center gap-3">
           <a
             href="tel:8339123999"
-            className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2 rounded-full border-2 transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full border-2 transition-colors"
             style={{ borderColor: TEAL, color: TEAL }}
           >
             Call (833) 912-3999
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center text-sm font-bold px-5 py-2 rounded-full transition-opacity hover:opacity-90"
+            className="inline-flex items-center text-sm font-bold px-5 py-2.5 rounded-full transition-opacity hover:opacity-90"
             style={{ backgroundColor: TEAL, color: "#fff" }}
           >
             Apply Now
@@ -587,14 +604,18 @@ export default function Home() {
                 Medi-Cal Approved Doula Provider, Los Angeles
               </p>
               <h1
-                className="text-4xl lg:text-5xl font-extrabold leading-tight mb-6"
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6"
                 style={{ color: NEAR_BLACK }}
               >
-                Take Advantage of{" "}
-                <span style={{ color: TEAL }}>
-                  Insurance Covered Doula Care
-                </span>{" "}
-                Today
+                <span className="sm:hidden">Medi-Cal Covered{" "}
+                  <span style={{ color: TEAL }}>Doula Care</span> in LA
+                </span>
+                <span className="hidden sm:inline">Take Advantage of{" "}
+                  <span style={{ color: TEAL }}>
+                    Insurance Covered Doula Care
+                  </span>{" "}
+                  Today
+                </span>
               </h1>
               <p
                 className="text-lg lg:text-xl mb-8 leading-relaxed"
@@ -652,8 +673,8 @@ export default function Home() {
 
             {/* Right: inline contact form */}
             <div
-              className="rounded-2xl p-6 lg:p-8 shadow-lg"
-              style={{ backgroundColor: "#fff" }}
+              className="rounded-2xl p-6 lg:p-8"
+              style={{ backgroundColor: "#fff", boxShadow: "0 8px 40px rgba(101,139,139,0.18), 0 2px 8px rgba(0,0,0,0.08)", border: `1px solid ${BORDER}` }}
             >
               <h2
                 className="text-xl font-bold mb-1"
@@ -673,7 +694,7 @@ export default function Home() {
 
       {/* ── MARQUEE STRIP ───────────────────────────────── */}
       <div
-        className="py-3"
+        className="py-4"
         style={{ backgroundColor: TEAL, color: "#fff", overflow: "hidden" }}
         aria-hidden="true"
       >
@@ -681,7 +702,7 @@ export default function Home() {
           {Array(8)
             .fill(null)
             .map((_, i) => (
-              <span key={i} className="inline-flex items-center gap-8 text-sm font-medium px-4">
+              <span key={i} className="inline-flex items-center gap-8 text-base font-semibold px-4">
                 <span>Prenatal Support</span>
                 <span style={{ color: MINT }}>&#10022;</span>
                 <span>Birth Doula</span>
@@ -807,7 +828,7 @@ export default function Home() {
             Support at Every Stage
           </h2>
           <p
-            className="text-lg text-center max-w-2xl mx-auto mb-14"
+            className="text-lg text-center max-w-2xl mx-auto mb-8"
             style={{ color: "#444" }}
           >
             From your first prenatal check-in to the weeks after birth, Ellen
@@ -823,12 +844,11 @@ export default function Home() {
                 style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${(i % 3) * 0.1}s` }}
               >
                 <div className="relative h-44">
-                  <Image
+                  <img
                     src={s.img}
                     alt={s.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
+                    className="object-cover w-full h-full"
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
@@ -867,7 +887,7 @@ export default function Home() {
           What Happens When You Reach Out
         </p>
         <h2
-          className="text-3xl lg:text-4xl font-extrabold text-center mb-14 reveal"
+          className="text-3xl lg:text-4xl font-extrabold text-center mb-8 reveal"
           style={{ color: NEAR_BLACK }}
         >
           From First Call to Postpartum
@@ -903,7 +923,7 @@ export default function Home() {
           ].map((item, i) => (
             <div
               key={item.step}
-              className="rounded-2xl p-6 border text-center reveal card-hover"
+              className="rounded-2xl p-4 md:p-6 border text-center reveal card-hover"
               style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.1}s` }}
             >
               <div
@@ -946,7 +966,7 @@ export default function Home() {
           </h2>
           <p
             className="text-lg text-center max-w-2xl mx-auto mb-14"
-            style={{ color: "#aaa" }}
+            style={{ color: "#bbb" }}
           >
             Having a doula is not just about feeling less alone, though that
             matters too. The clinical evidence on birth outcomes is hard to
@@ -970,25 +990,27 @@ export default function Home() {
                 >
                   {s.stat}
                 </p>
-                <p className="text-base leading-relaxed" style={{ color: "#ccc" }}>
+                <p className="text-base leading-relaxed" style={{ color: "#ddd" }}>
                   {s.label}
                 </p>
               </div>
             ))}
           </div>
+          <p className="text-xs text-center mt-8" style={{ color: "#777" }}>
+            Based on published doula research studies.
+          </p>
         </div>
       </section>
 
       {/* ── MEET NURSE ELLEN ─────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div className="relative rounded-2xl overflow-hidden h-96 lg:h-[520px] reveal">
-            <Image
+          <div className="rounded-2xl overflow-hidden h-96 lg:h-[520px] reveal">
+            <img
               src="/assets/team/nurse-ellen-profile.jpg"
               alt="Ellen Hakopyan, Founder and Lead Doula"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-top"
+              className="object-cover object-top w-full h-full"
+              loading="lazy"
             />
           </div>
           <div className="reveal" style={{ animationDelay: "0.15s" }}>
@@ -1076,11 +1098,14 @@ export default function Home() {
             Families We&apos;ve Supported
           </p>
           <h2
-            className="text-3xl lg:text-4xl font-extrabold text-center mb-14 reveal"
+            className="text-3xl lg:text-4xl font-extrabold text-center mb-3 reveal"
             style={{ color: NEAR_BLACK }}
           >
             What Families Are Saying
           </h2>
+          <p className="text-sm text-center mb-10 font-medium" style={{ color: TEAL }}>
+            &#10003; Verified patient reviews
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
@@ -1288,25 +1313,7 @@ export default function Home() {
       </section>
 
       {/* ── STICKY MOBILE CTA ────────────────────────────── */}
-      <div
-        className={`sticky-cta-bar${showStickyBar ? " visible" : ""}`}
-        aria-hidden={!showStickyBar}
-      >
-        <a
-          href="tel:8339123999"
-          className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full border-2 font-bold text-sm transition-opacity hover:opacity-90"
-          style={{ borderColor: TEAL, color: TEAL }}
-        >
-          &#9990; Call Now
-        </a>
-        <a
-          href="#contact"
-          className="flex-1 flex items-center justify-center py-3 rounded-full font-bold text-sm transition-opacity hover:opacity-90"
-          style={{ backgroundColor: TEAL, color: "#fff" }}
-        >
-          Apply Now
-        </a>
-      </div>
+      <StickyMobileCTA />
 
       {/* ── FOOTER ───────────────────────────────────────── */}
       <footer
@@ -1376,7 +1383,7 @@ export default function Home() {
             style={{ borderColor: "rgba(255,255,255,0.06)" }}
           >
             <p className="text-xs" style={{ color: "#555" }}>
-              &copy; 2025 EH Nursing and Wellness Services. All Rights Reserved.
+              &copy; 2026 EH Nursing and Wellness Services. All Rights Reserved.
             </p>
             <div className="flex gap-4 text-xs" style={{ color: "#555" }}>
               <a href="/privacy-policy-and-tos" className="hover:text-white transition-colors">
