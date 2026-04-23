@@ -37,3 +37,10 @@ Run #3 complete. Two changes pushed:
 **Task A** — Added a centered "See If You Qualify" CTA (MINT button on dark background) directly below the impact stats block ("4x lower risk", "2x fewer complications"). Visitors are at peak persuasion at that moment; previously the section ended with a research citation and no path to convert.
 
 **Task B** — Added a centered "Apply Now" CTA below the three 5-star testimonials. Reading peer social proof is a high-conversion trigger; previously the section ended with no action available, losing motivated visitors to the scroll.
+Run 3 complete. Two changes pushed:
+
+**Task A** — Added "See If You Qualify" CTA (MINT button, NEAR_BLACK text) at the bottom of the dark stats section. Visitors who just read "4x lower risk / 2x fewer complications" are at peak persuasion and previously had no action available.
+
+**Task B** — Added "Apply Now" CTA at the bottom of the testimonials section. After reading three 5-star reviews, visitors were previously sent into a scroll with no conversion point. The button is followed by "No cost to apply. Coverage confirmed before your first visit." to preempt commitment hesitation.
+[2026-04-23 09:09:50] Run #3 finished
+[2026-04-23 09:09:50] Reached max loops (3). Stopping.

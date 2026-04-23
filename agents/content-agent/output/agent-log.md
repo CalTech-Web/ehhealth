@@ -107,3 +107,15 @@ Run #4 complete. Four targeted changes, all deployed and live at `site-seven-bet
 [2026-04-22 17:05:00] Committed: 04c6912 — "Sharpen section overlines and headings with specific, human copy"
 [2026-04-22 17:05:00] Deployed to Vercel production: Ready (15s build) — site-seven-beta-77.vercel.app
 [2026-04-22 17:05:00] Run #5 complete
+Run #5 complete. Eight targeted changes, all deployed and live at `site-seven-beta-77.vercel.app`:
+
+- **Services overline** — "What We Offer" → "Nine Services. Medi-Cal Covered." Names what's on offer and the coverage hook in the same breath.
+- **How It Works overline** — "Your Path to Support" → "What Happens When You Reach Out" Sets the reader's expectation more directly.
+- **How It Works heading** — "How It Works" → "From First Call to Postpartum" The most generic heading on the page, now specific to the actual journey.
+- **Stats heading** — "The Power of Doula Support" → "What the Research Found" Less marketing-speak, more credibility.
+- **Ellen overline** — "Meet Your Doula" → "Neonatal ICU Nurse. Nurse Practitioner. Doula." Three credentials as the section entry, before the reader even sees her name.
+- **FAQ overline** — "Common Questions" → "Questions We Hear All the Time" Warmer, more conversational.
+- **Contact overline** — "Get Started Today" → "Find Out If You Qualify" Shifts from a generic push to a specific action aligned with the Medi-Cal angle.
+- **Marquee strip** — Added "No Office Visit Required" and "Comes to You" to reinforce the mobile provider differentiator at the top of the page.
+[2026-04-22 16:53:43] Run #5 finished
+[2026-04-22 16:53:43] Reached max loops (5). Stopping.

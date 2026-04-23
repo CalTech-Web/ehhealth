@@ -116,3 +116,20 @@ Changes shipped:
 5. Keyword expansion — 6 new terms: prenatal doula Los Angeles, postpartum doula Medi-Cal Los Angeles, doula birth center Los Angeles, doula for first-time mothers Los Angeles, Medi-Cal approved doula 2025, Van Nuys prenatal support
 6. preconnect — added <link rel="preconnect" href="https://forms.caltechweb.com"> in <head> to reduce DNS and TCP latency for form submissions; indirect Core Web Vitals benefit
 [2026-04-22 17:25:00] Run #5 finished
+SEO run #5 is complete and live on production. Here's what shipped:
+
+**Structured data (`layout.tsx`):**
+- `WebPage` schema node added to `@graph` with `datePublished`, `dateModified`, `about` (linking to the organization), `isPartOf` (linking to WebSite), and a `BreadcrumbList` — gives Google a proper page-level entity, which is the correct linked-data pattern for a homepage
+- `foundingDate: "2025"` and `legalName` added to LocalBusiness — enriches the Knowledge Panel
+- `openingHours` plain string replaced with structured `openingHoursSpecification` array — Google's preferred format for displaying hours in the Knowledge Panel
+- 10th FAQ: "What happens at the initial assessment visit?" added to FAQPage schema — targets the highest-intent pre-booking query
+
+**Page content (`page.tsx`):**
+- 10th FAQ displayed in accordion — answers the question most families have right before they decide to book
+
+**Performance:**
+- `<link rel="preconnect" href="https://forms.caltechweb.com">` added to `<head>` — reduces DNS/TCP latency for form submissions, indirectly improving Core Web Vitals
+
+**Keywords:** 6 new terms covering prenatal and postpartum doula Medi-Cal searches, birth center, first-time mothers, and a 2025-specific term.
+[2026-04-22 17:16:14] Run #5 finished
+[2026-04-22 17:16:14] Reached max loops (5). Stopping.
