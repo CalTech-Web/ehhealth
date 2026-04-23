@@ -33,3 +33,11 @@ Deployment succeeded. The card hover lift effect is now live on ehhealth.org. Ho
 [2026-04-23 09:16:44] Run #1 starting (model: sonnet)
 Deployment succeeded. The impact stats section on ehhealth.org now animates: when "4x" and "2x" scroll into view, the numbers count up from 1x to their target value using a smooth cubic ease-out via requestAnimationFrame. "Higher" remains as text but still gets the existing scroll-reveal fade. Makes the proof data feel dynamic and draws the eye to the key figures.
 [2026-04-23 09:16:44] Run #1 finished
+Deployment is live. The visual upgrade is complete: the impact stats section on ehhealth.org now animates the "4x" and "2x" numbers counting up from 1x when they scroll into view, using a cubic ease-out over 1.4 seconds. "Higher" keeps the existing scroll-reveal fade. This makes the evidence-based proof data feel dynamic and eye-catching at a critical conversion moment on the page.
+[2026-04-23 09:19:24] Run #1 finished
+[2026-04-23 09:19:29] Run #2 starting (model: sonnet)
+Deployment succeeded. The two teal blobs in the hero section now animate continuously with a gentle floating motion — `blob-float-1` runs over 14 seconds and `blob-float-2` over 18 seconds, keeping their drift offset so the hero background feels alive without being distracting.
+[2026-04-23 09:20:55] Run #2 finished
+[2026-04-23 09:21:00] Run #3 starting (model: sonnet)
+Deployment succeeded. Added a teal gradient scroll progress bar fixed at the very top of the viewport (z-index 60, above the sticky nav). As the user scrolls the single-page site, a 4px bar fills from left (teal #658B8B) to right (mint #D7F7F7), giving orientation on this long-scrolling page. Width transitions at 50ms for smooth tracking.
+[2026-04-23 09:26:00] Run #3 finished
