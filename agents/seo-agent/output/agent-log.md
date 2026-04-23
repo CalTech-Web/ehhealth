@@ -66,3 +66,28 @@ Changes shipped:
 4. Keyword expansion — added 18 new long-tail terms targeting specific insurance plans (CalOptima, HealthNet, Kaiser), city-specific searches (Van Nuys CA, North Hollywood, Sherman Oaks, Burbank, Glendale), cost intent queries ("doula at no cost Medi-Cal", "how much does a doula cost Medi-Cal"), and service-specific terms (VBAC doula, cesarean birth doula, pregnancy loss doula, abortion support doula)
 5. 8th FAQ — "How much does doula care cost with Medi-Cal?" added to both the on-page FAQ accordion and FAQPage JSON-LD schema — targets one of the highest-volume doula search queries and directly addresses the cost barrier
 [2026-04-22 17:15:00] Run #3 finished
+SEO run #3 is complete and deployed to production. Here's what shipped:
+
+**Structured data (`layout.tsx`):**
+- `aggregateRating` added to LocalBusiness (5.0 / 3 reviews) — unlocks star rating display in Google Search rich results
+- 3 `Review` schema nodes added to `@graph`, each matching an on-page testimonial with 5/5 ratings
+- 8th FAQ in FAQPage schema: "How much does doula care cost with Medi-Cal?" — targets one of the highest-volume doula search queries
+
+**Meta tags (`layout.tsx`):**
+- `geo.position: 34.1886;-118.4491` and `ICBM: 34.1886, -118.4491` — lat/long coordinates for Van Nuys, strengthening local geotargeting signals
+- 18 new keyword terms added covering specific insurance plans (CalOptima, HealthNet, Kaiser), city-specific searches (Van Nuys, North Hollywood, Burbank, Glendale, Sherman Oaks), and high-intent cost queries
+
+**Page content (`page.tsx`):**
+- 8th FAQ displayed in accordion: "How much does doula care cost with Medi-Cal?" — directly addresses the cost barrier that most families Google before deciding
+[2026-04-22 17:07:21] Run #3 finished
+[2026-04-22 17:07:26] Run #4 starting (model: sonnet)
+[2026-04-22] SEO run #4 complete. Deployed to production.
+
+Changes shipped:
+1. Person schema — standalone @graph node for Ellen Hakopyan with hasCredential (NP, Pediatric/Neonatal ICU Nurse) and knowsAbout array; LocalBusiness founder now references it by @id instead of duplicating the data
+2. HowTo schema — 5-step "How to Get Medi-Cal Covered Doula Care in Los Angeles" added to @graph; maps to the existing "How It Works" section; eligible for Google rich results
+3. LocalBusiness additions — slogan ("Take Advantage of Insurance Covered Doula Care Today") and currenciesAccepted ("USD") added
+4. 9th FAQ — "Can a doula attend my hospital birth or home birth in Los Angeles?" added to both FAQPage JSON-LD schema and the on-page accordion; targets high-volume "hospital birth doula Los Angeles" and "home birth doula Los Angeles" search queries
+5. Keyword expansion — 14 new terms: doula Encino, doula Northridge, doula Studio City, doula Pasadena, doula Culver City, doula Hawthorne, doula Inglewood, hospital birth doula Los Angeles, home birth doula Los Angeles, NICU nurse doula Los Angeles, doula for teen moms Los Angeles, LGBTQ doula Los Angeles, nurse practitioner doula Los Angeles, doula domestic violence support Los Angeles
+6. LCP improvement — added priority prop to the doula image band (full-width above-the-fold image); prevents the browser from lazy-loading a large above-fold image
+[2026-04-22] Run #4 finished
