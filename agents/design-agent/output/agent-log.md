@@ -71,3 +71,8 @@ Deployment is live. The visual enhancement: hovering any of the 9 service cards 
 Deployment succeeded. Added an animated connector line to the "How It Works" 5-step section. On desktop, a teal horizontal line (opacity 0.35) sits at the level of the numbered step circles and grows from left to right via a CSS scaleX animation (1.4s, cubic-bezier ease) when the section scrolls into view. The line is observed by the existing IntersectionObserver. Step number circles have z-index 10 so they visually sit above the line, creating a path/journey visualization between all 5 steps.
 [2026-04-23 10:25:51] Run #2 finished
 [2026-04-23 10:25:56] Run #3 starting (model: sonnet)
+Deployment is live (`state: success`). The enhancement: on the "How It Works" section, a teal connector line now grows from left to right across all 5 steps when the section scrolls into view. The line animates with a 1.4s cubic-bezier ease (delayed 0.5s after the step cards appear), creating a clear visual "journey path" between the numbered circles on desktop.
+[2026-04-23 10:31:12] Run #3 finished
+[2026-04-23 10:31:17] Run #4 starting (model: sonnet)
+Deployment succeeded. Added two visual enhancements: (1) Frosted-glass nav on scroll — when the user scrolls past 20px the sticky nav transitions from solid white to rgba(255,255,255,0.78) + backdrop-filter: blur(18px) saturate(180%) with a 0.35s ease transition, giving it a polished glass-panel feel. (2) CTA shimmer sweep — a periodic diagonal white highlight (skewX -20deg, 50% width, 4s cycle) sweeps across the "Apply Now" nav button and the "Check My Coverage" submit button via a CSS `::after` pseudo-element, drawing the eye to the primary conversion actions.
+[2026-04-23 10:31:17] Run #4 finished
