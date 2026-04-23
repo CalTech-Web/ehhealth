@@ -758,10 +758,10 @@ export default function Home() {
                 style={{ color: NEAR_BLACK }}
               >
                 <span className="sm:hidden">Doula Care,{" "}
-                  <span style={{ color: TEAL }}>Covered by Medi-Cal</span>
+                  <span className="hero-text-underline" style={{ color: TEAL }}>Covered by Medi-Cal</span>
                 </span>
                 <span className="hidden sm:inline">Your Medi-Cal Covers{" "}
-                  <span style={{ color: TEAL }}>
+                  <span className="hero-text-underline" style={{ color: TEAL }}>
                     Expert Doula Care
                   </span>
                 </span>

@@ -209,6 +209,20 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 
+/* ─── Hero headline underline draw ─────────────────── */
+@keyframes underline-draw {
+  to { background-size: 100% 3px; }
+}
+
+.hero-text-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 3px;
+  animation: underline-draw 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  padding-bottom: 2px;
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }
