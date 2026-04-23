@@ -509,6 +509,49 @@ function AnimatedStatCard({
   );
 }
 
+/* ─── 3D Tilt Card Wrapper ──────────────────────────── */
+function TiltCard({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [rx, setRx] = useState(0);
+  const [ry, setRy] = useState(0);
+  const [hovered, setHovered] = useState(false);
+
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const cx = (e.clientX - rect.left) / rect.width;
+    const cy = (e.clientY - rect.top) / rect.height;
+    setHovered(true);
+    setRx(-(cy - 0.5) * 10);
+    setRy((cx - 0.5) * 10);
+  }
+
+  function handleMouseLeave() {
+    setHovered(false);
+    setRx(0);
+    setRy(0);
+  }
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transform: `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)${hovered ? " translateZ(12px)" : ""}`,
+        transition: hovered
+          ? "transform 0.08s ease-out, box-shadow 0.08s ease-out"
+          : "transform 0.5s ease, box-shadow 0.5s ease",
+        boxShadow: hovered ? "0 24px 48px rgba(101,139,139,0.30)" : undefined,
+        willChange: "transform",
+        borderRadius: "1rem",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 /* ─── Page ──────────────────────────────────────────── */
 export default function Home() {
   const services = [
@@ -962,42 +1005,43 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
-              <div
-                key={s.title}
-                className="rounded-2xl overflow-hidden border flex flex-col reveal card-hover service-card"
-                style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${(i % 3) * 0.1}s` }}
-              >
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    className="object-cover w-full h-full service-img"
-                    loading="lazy"
-                  />
-                  <div className="service-img-overlay" aria-hidden="true" />
+              <TiltCard key={s.title}>
+                <div
+                  className="rounded-2xl overflow-hidden border flex flex-col h-full reveal service-card"
+                  style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${(i % 3) * 0.1}s` }}
+                >
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={s.img}
+                      alt={s.title}
+                      className="object-cover w-full h-full service-img"
+                      loading="lazy"
+                    />
+                    <div className="service-img-overlay" aria-hidden="true" />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3
+                      className="text-base font-bold mb-2"
+                      style={{ color: NEAR_BLACK }}
+                    >
+                      {s.title}
+                    </h3>
+                    <p
+                      className="text-sm leading-relaxed flex-1"
+                      style={{ color: "#555" }}
+                    >
+                      {s.desc}
+                    </p>
+                    <a
+                      href="#contact"
+                      className="mt-4 text-sm font-bold underline"
+                      style={{ color: TEAL }}
+                    >
+                      Apply Now
+                    </a>
+                  </div>
                 </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <h3
-                    className="text-base font-bold mb-2"
-                    style={{ color: NEAR_BLACK }}
-                  >
-                    {s.title}
-                  </h3>
-                  <p
-                    className="text-sm leading-relaxed flex-1"
-                    style={{ color: "#555" }}
-                  >
-                    {s.desc}
-                  </p>
-                  <a
-                    href="#contact"
-                    className="mt-4 text-sm font-bold underline"
-                    style={{ color: TEAL }}
-                  >
-                    Apply Now
-                  </a>
-                </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
