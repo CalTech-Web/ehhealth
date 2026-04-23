@@ -223,6 +223,20 @@ body {
   padding-bottom: 2px;
 }
 
+/* ─── Testimonial decorative quote fade-in ──────────── */
+@keyframes quote-fade-in {
+  from { opacity: 0; transform: scale(0.8) rotate(-5deg); }
+  to   { opacity: 0.07; transform: scale(1) rotate(0deg); }
+}
+
+.testimonial-quote-deco {
+  opacity: 0;
+}
+
+.reveal.in-view .testimonial-quote-deco {
+  animation: quote-fade-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }

@@ -1243,9 +1243,26 @@ export default function Home() {
             {testimonials.map((t, i) => (
               <div
                 key={t.name}
-                className="rounded-2xl p-8 border flex flex-col reveal card-hover"
+                className="rounded-2xl p-8 border flex flex-col reveal card-hover relative overflow-hidden"
                 style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.12}s` }}
               >
+                <div
+                  aria-hidden="true"
+                  className="testimonial-quote-deco"
+                  style={{
+                    position: "absolute",
+                    bottom: "-1.25rem",
+                    right: "1.25rem",
+                    fontSize: "10rem",
+                    lineHeight: 1,
+                    color: TEAL,
+                    fontFamily: "Georgia, 'Times New Roman', serif",
+                    userSelect: "none",
+                    pointerEvents: "none",
+                  }}
+                >
+                  &rdquo;
+                </div>
                 <div className="flex items-center gap-4 mb-6">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold"
