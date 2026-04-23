@@ -635,7 +635,7 @@ export default function Home() {
                   backgroundColor: "transparent",
                 }}
               >
-                Call Now, (833) 912-3999
+                Call (833) 912-3999
               </a>
 
               <p
@@ -867,7 +867,7 @@ export default function Home() {
                     className="mt-4 text-sm font-bold underline"
                     style={{ color: TEAL }}
                   >
-                    Get started
+                    Apply Now
                   </a>
                 </div>
               </div>
