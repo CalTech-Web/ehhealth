@@ -1182,7 +1182,7 @@ export default function Home() {
       {/* ── MEET NURSE ELLEN ─────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div className="rounded-2xl overflow-hidden h-96 lg:h-[520px] reveal">
+          <div className="rounded-2xl overflow-hidden h-96 lg:h-[520px] reveal ellen-photo-glow">
             <img
               src="/assets/team/nurse-ellen-profile.jpg"
               alt="Ellen Hakopyan, Founder and Lead Doula"
@@ -1230,7 +1230,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3 cred-badges-row">
               {[
                 "Pediatric ICU Nurse",
                 "Neonatal ICU Nurse",
@@ -1240,7 +1240,7 @@ export default function Home() {
               ].map((cred) => (
                 <span
                   key={cred}
-                  className="text-xs font-semibold px-3 py-1.5 rounded-full"
+                  className="cred-badge text-xs font-semibold px-3 py-1.5 rounded-full"
                   style={{
                     backgroundColor: MINT,
                     color: TEAL,

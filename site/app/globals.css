@@ -276,6 +276,33 @@ body {
   animation: call-ring-pulse 2.4s ease-out 1.8s infinite;
 }
 
+/* ─── Ellen credential badge pop-in ────────────────── */
+@keyframes cred-pop {
+  from { opacity: 0; transform: scale(0.65) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.cred-badge {
+  opacity: 0;
+  transform: scale(0.65) translateY(8px);
+}
+
+.reveal.in-view .cred-badges-row .cred-badge:nth-child(1) { animation: cred-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s forwards; }
+.reveal.in-view .cred-badges-row .cred-badge:nth-child(2) { animation: cred-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.68s forwards; }
+.reveal.in-view .cred-badges-row .cred-badge:nth-child(3) { animation: cred-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.81s forwards; }
+.reveal.in-view .cred-badges-row .cred-badge:nth-child(4) { animation: cred-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.94s forwards; }
+.reveal.in-view .cred-badges-row .cred-badge:nth-child(5) { animation: cred-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.07s forwards; }
+
+/* ─── Ellen photo glow pulse ────────────────────────── */
+@keyframes ellen-photo-glow {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(101,139,139,0.18), 0 8px 32px rgba(101,139,139,0.10); }
+  50%       { box-shadow: 0 0 0 6px rgba(101,139,139,0.32), 0 14px 44px rgba(101,139,139,0.20); }
+}
+
+.ellen-photo-glow {
+  animation: ellen-photo-glow 3.8s ease-in-out infinite;
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }
