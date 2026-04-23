@@ -303,6 +303,30 @@ body {
   animation: ellen-photo-glow 3.8s ease-in-out infinite;
 }
 
+/* ─── Section eyebrow label shimmer ────────────────── */
+@keyframes eyebrow-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.section-eyebrow {
+  background: linear-gradient(90deg, #4a7575 0%, #658B8B 30%, #9ecece 50%, #658B8B 70%, #4a7575 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: eyebrow-shimmer 5s linear infinite;
+}
+
+.section-eyebrow-light {
+  background: linear-gradient(90deg, #a8d8d8 0%, #D7F7F7 30%, #ffffff 50%, #D7F7F7 70%, #a8d8d8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: eyebrow-shimmer 5s linear infinite;
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────── */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(28px); }

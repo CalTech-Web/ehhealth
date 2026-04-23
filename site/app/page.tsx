@@ -377,8 +377,7 @@ function FaqSection({
   return (
     <section className="max-w-4xl mx-auto px-6 py-20">
       <p
-        className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
-        style={{ color: teal }}
+        className="section-eyebrow text-sm font-semibold uppercase tracking-widest text-center mb-3"
       >
         Questions We Hear All the Time
       </p>
@@ -791,8 +790,7 @@ export default function Home() {
             {/* Left: headline + phone CTA */}
             <div>
               <p
-                className="text-sm font-semibold uppercase tracking-widest mb-4"
-                style={{ color: TEAL }}
+                className="section-eyebrow text-sm font-semibold uppercase tracking-widest mb-4"
               >
                 Medi-Cal Approved Doula Provider, Los Angeles
               </p>
@@ -919,8 +917,7 @@ export default function Home() {
       {/* ── WHY CHOOSE EH ──────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <p
-          className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
-          style={{ color: TEAL }}
+          className="section-eyebrow text-sm font-semibold uppercase tracking-widest text-center mb-3"
         >
           Why Choose EH Nursing
         </p>
@@ -983,8 +980,7 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-6">
           <p
-            className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
-            style={{ color: TEAL }}
+            className="section-eyebrow text-sm font-semibold uppercase tracking-widest text-center mb-3"
           >
             Nine Services. Medi-Cal Covered.
           </p>
@@ -1050,8 +1046,7 @@ export default function Home() {
       {/* ── HOW IT WORKS ─────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <p
-          className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
-          style={{ color: TEAL }}
+          className="section-eyebrow text-sm font-semibold uppercase tracking-widest text-center mb-3"
         >
           What Happens When You Reach Out
         </p>
@@ -1137,8 +1132,7 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-6">
           <p
-            className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
-            style={{ color: MINT }}
+            className="section-eyebrow-light text-sm font-semibold uppercase tracking-widest text-center mb-3"
           >
             Evidence-Based Outcomes
           </p>
@@ -1192,8 +1186,7 @@ export default function Home() {
           </div>
           <div className="reveal" style={{ animationDelay: "0.15s" }}>
             <p
-              className="text-sm font-semibold uppercase tracking-widest mb-3"
-              style={{ color: TEAL }}
+              className="section-eyebrow text-sm font-semibold uppercase tracking-widest mb-3"
             >
               Neonatal ICU Nurse. Nurse Practitioner. Doula.
             </p>
@@ -1269,8 +1262,7 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-6">
           <p
-            className="text-sm font-semibold uppercase tracking-widest text-center mb-3"
-            style={{ color: TEAL }}
+            className="section-eyebrow text-sm font-semibold uppercase tracking-widest text-center mb-3"
           >
             Families We&apos;ve Supported
           </p>
@@ -1368,8 +1360,7 @@ export default function Home() {
             {/* Left: info */}
             <div>
               <p
-                className="text-sm font-semibold uppercase tracking-widest mb-3"
-                style={{ color: MINT }}
+                className="section-eyebrow-light text-sm font-semibold uppercase tracking-widest mb-3"
               >
                 Find Out If You Qualify
               </p>
