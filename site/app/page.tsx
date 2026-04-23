@@ -487,6 +487,10 @@ export default function Home() {
       q: "How do I get started?",
       a: "Call (833) 912-3999 or fill out the contact form on this page. Share your due date, your Medi-Cal plan, and the type of support you are looking for. We will reach out within one business day to schedule your initial assessment visit.",
     },
+    {
+      q: "How much does doula care cost with Medi-Cal?",
+      a: "If you have a qualifying Medi-Cal Managed Care plan, doula services through EH Nursing are covered at no out-of-pocket cost to you. That includes LA Care, Kaiser Permanente Southern CA, HealthNet, CalOptima, and other Medi-Cal HMO plans. We verify your coverage before your first visit so there are no surprises.",
+    },
   ];
 
   const [showStickyBar, setShowStickyBar] = useState(false);

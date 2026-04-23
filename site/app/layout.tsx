@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "EH Nursing is a Medi-Cal approved doula provider in Los Angeles. Nurse-led prenatal, birth, and postpartum support at no out-of-pocket cost for qualifying families. Call (833) 912-3999.",
   keywords:
-    "doula Los Angeles, Medi-Cal doula, nurse practitioner doula, prenatal support, postpartum care, VBAC support, LA Care doula, postpartum doula Los Angeles, birth doula Medi-Cal, insurance covered doula, Van Nuys doula, nurse doula Los Angeles",
+    "doula Los Angeles, Medi-Cal doula, nurse practitioner doula, prenatal support, postpartum care, VBAC support, LA Care doula, postpartum doula Los Angeles, birth doula Medi-Cal, insurance covered doula, Van Nuys doula, nurse doula Los Angeles, CalOptima doula, HealthNet doula, Kaiser doula Medi-Cal, doula covered by insurance Los Angeles, how much does a doula cost Medi-Cal, VBAC doula Los Angeles, cesarean birth doula, pregnancy loss doula, abortion support doula, doula Van Nuys CA, doula North Hollywood, doula Sherman Oaks, doula Burbank, doula Glendale, nurse led doula Los Angeles County, Medi-Cal HMO doula provider, doula at no cost Medi-Cal",
   authors: [{ name: "EH Nursing and Wellness Services", url: "https://ehhealth.org" }],
   creator: "EH Nursing and Wellness Services",
   publisher: "EH Nursing and Wellness Services",
@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "US-CA",
     "geo.placename": "Van Nuys, Los Angeles, California",
+    "geo.position": "34.1886;-118.4491",
+    "ICBM": "34.1886, -118.4491",
   },
   openGraph: {
     type: "website",
@@ -218,6 +220,13 @@ const jsonLd = {
           },
         ],
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "3",
+        bestRating: "5",
+        worstRating: "1",
+      },
       sameAs: [],
       founder: {
         "@type": "Person",
@@ -230,6 +239,33 @@ const jsonLd = {
           "@id": "https://ehhealth.org/#organization",
         },
       },
+    },
+    {
+      "@type": "Review",
+      "@id": "https://ehhealth.org/#review-1",
+      itemReviewed: { "@id": "https://ehhealth.org/#organization" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Maria S." },
+      reviewBody:
+        "I felt supported the entire time. My doula made sure I understood my options and never felt alone during labor.",
+    },
+    {
+      "@type": "Review",
+      "@id": "https://ehhealth.org/#review-2",
+      itemReviewed: { "@id": "https://ehhealth.org/#organization" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Jasmine R." },
+      reviewBody:
+        "As a first-time mom, I was honestly nervous about everything. Having someone there to guide me and reassure me made a huge difference.",
+    },
+    {
+      "@type": "Review",
+      "@id": "https://ehhealth.org/#review-3",
+      itemReviewed: { "@id": "https://ehhealth.org/#organization" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Alyssa M." },
+      reviewBody:
+        "The postpartum support was something I did not expect to need this much. It helped me adjust and feel more confident caring for my baby.",
     },
     {
       "@type": "FAQPage",
@@ -289,6 +325,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Call (833) 912-3999 or fill out the contact form on this page. Share your due date, your Medi-Cal plan, and the type of support you are looking for. We will reach out within one business day to schedule your initial assessment visit.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does doula care cost with Medi-Cal?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "If you have a qualifying Medi-Cal Managed Care plan, doula services through EH Nursing are covered at no out-of-pocket cost to you. That includes LA Care, Kaiser Permanente Southern CA, HealthNet, CalOptima, and other Medi-Cal HMO plans. We verify your coverage before your first visit so there are no surprises.",
           },
         },
       ],
