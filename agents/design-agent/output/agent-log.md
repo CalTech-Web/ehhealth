@@ -92,3 +92,8 @@ Deployment succeeded. The trust badge enhancements are live:
 [2026-04-23 10:42:17] Run #6 starting (model: sonnet)
 Deployment succeeded. Added an animated underline-draw effect to the hero headline's teal key phrases: "Expert Doula Care" (desktop) and "Covered by Medi-Cal" (mobile) now get a 3px teal underline that sweeps from left to right over 0.8s (with a 0.5s page-load delay) using a CSS `background-size` animation. Pure CSS, no JS added. Draws the eye to the primary value proposition at the top of the page.
 [2026-04-23 10:42:17] Run #6 finished
+Done. The enhancement is live: the teal key phrases in the hero headline now animate a 3px underline drawing from left to right on page load, using a pure CSS `background-size` keyframe animation with no JavaScript added.
+[2026-04-23 10:45:36] Run #6 finished
+[2026-04-23 10:45:41] Run #7 starting (model: sonnet)
+Deployment succeeded. Added large decorative quote marks to the three testimonial cards. Each card now has a 10rem teal close-quote character absolutely positioned in the bottom-right corner (card has overflow:hidden to clip it). The mark fades in with a subtle scale+rotate entrance animation (0.9s, cubic-bezier ease) triggered when the card scrolls into view via the existing .reveal.in-view class selector. Adds typographic richness and editorial polish to the social proof section with no JavaScript added.
+[2026-04-23 10:45:41] Run #7 finished
