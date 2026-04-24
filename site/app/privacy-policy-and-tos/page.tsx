@@ -20,6 +20,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div style={{ backgroundColor: BODY_BG, color: NEAR_BLACK, minHeight: "100vh" }}>
       <SiteHeader />
+      <div id="main-content" tabIndex={-1} className="outline-none" />
 
       {/* HERO */}
       <div

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import YouTubePopup from "./components/YouTubePopup";
+import CookieBanner from "./components/CookieBanner";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ehhealth.org"),
@@ -461,16 +462,27 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <head>
         <link rel="preconnect" href="https://forms.caltechweb.com" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHHEALTH01" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EHHEALTH01');`,
-          }}
-        />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_ID}');`,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className="min-h-full flex flex-col">
+        <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
         {children}
         <YouTubePopup />
+        <CookieBanner />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

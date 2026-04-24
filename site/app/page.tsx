@@ -779,6 +779,7 @@ export default function Home() {
     <main className="pb-20 sm:pb-0" style={{ backgroundColor: BODY_BG, color: NEAR_BLACK }}>
       <ScrollProgressBar />
       <SiteHeader />
+      <div id="main-content" tabIndex={-1} className="outline-none" />
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <section

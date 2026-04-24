@@ -3,6 +3,38 @@ import Link from "next/link";
 
 const MINT = "#D7F7F7";
 
+const SOCIAL = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/ehnursingandwellnessservices",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M13 22v-8h3l.5-4H13V7.5c0-1.1.4-1.9 2-1.9h2V2.1C16.6 2 15.4 2 14.3 2 11.9 2 10 3.5 10 6.5V10H7v4h3v8h3z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/ehnursingandwellnessservices",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@EHNursingandWellnessServices",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M23 7.6a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.5A3 3 0 0 0 1 7.6 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.4 3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.4 31 31 0 0 0-.5-4.4zM10 15.5v-7l6 3.5-6 3.5z" />
+      </svg>
+    ),
+  },
+];
+
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about-eh", label: "About EH" },
@@ -30,11 +62,30 @@ export default function SiteFooter() {
                 className="h-12 w-auto object-contain"
               />
             </Link>
-            <p className="text-xs leading-relaxed" style={{ color: "#888" }}>
+            <p className="text-xs leading-relaxed mb-5" style={{ color: "#888" }}>
               Nurse-led doula support to families throughout Los Angeles County.
               Medi-Cal covered for qualifying families. Ellen comes to you, no
               office visit needed.
             </p>
+            <div className="flex gap-2.5">
+              {SOCIAL.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-full transition-colors"
+                  style={{
+                    backgroundColor: "rgba(215,247,247,0.08)",
+                    color: MINT,
+                    border: "1px solid rgba(215,247,247,0.15)",
+                  }}
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>

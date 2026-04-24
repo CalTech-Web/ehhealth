@@ -85,6 +85,7 @@ export default function ServicesPage() {
   return (
     <div style={{ backgroundColor: BODY_BG, color: NEAR_BLACK, minHeight: "100vh" }}>
       <SiteHeader />
+      <div id="main-content" tabIndex={-1} className="outline-none" />
 
       {/* HERO */}
       <section className="relative overflow-hidden" style={{ backgroundColor: MINT }}>
