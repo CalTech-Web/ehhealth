@@ -265,15 +265,22 @@ body {
 .reveal.in-view .step-circle[data-step="4"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 1.55s both; }
 .reveal.in-view .step-circle[data-step="5"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 1.90s both; }
 
-/* ─── Hero call CTA pulse ring ──────────────────────── */
-@keyframes call-ring-pulse {
+/* ─── Hero call icon pulse ring ─────────────────────── */
+@keyframes call-icon-pulse {
   0%   { box-shadow: 0 0 0 0 rgba(101,139,139,0.55); }
-  70%  { box-shadow: 0 0 0 18px rgba(101,139,139,0); }
+  70%  { box-shadow: 0 0 0 14px rgba(101,139,139,0); }
   100% { box-shadow: 0 0 0 0 rgba(101,139,139,0); }
 }
 
-.call-ring-pulse {
-  animation: call-ring-pulse 2.4s ease-out 1.8s infinite;
+@keyframes call-icon-shake {
+  0%, 92%, 100% { transform: rotate(0); }
+  94%           { transform: rotate(-12deg); }
+  96%           { transform: rotate(12deg); }
+  98%           { transform: rotate(-8deg); }
+}
+
+.call-icon-pulse {
+  animation: call-icon-pulse 2.4s ease-out 1.8s infinite, call-icon-shake 2.4s ease-in-out 1.8s infinite;
 }
 
 /* ─── Ellen credential badge pop-in ────────────────── */

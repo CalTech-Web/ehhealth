@@ -27,8 +27,7 @@ export default function SiteFooter() {
                 alt="EH Nursing and Wellness Services"
                 width={2118}
                 height={1021}
-                className="h-14 w-auto object-contain"
-                style={{ filter: "brightness(0) invert(1)" }}
+                className="h-12 w-auto object-contain"
               />
             </Link>
             <p className="text-xs leading-relaxed" style={{ color: "#888" }}>
