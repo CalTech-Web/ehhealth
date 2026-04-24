@@ -67,7 +67,7 @@ function ParallaxBand() {
   const words = ["voice", "birth", "family"];
 
   return (
-    <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5F4F3" }}>
+    <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* LEFT: image */}
