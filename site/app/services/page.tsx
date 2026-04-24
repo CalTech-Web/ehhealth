@@ -160,8 +160,8 @@ export default function ServicesPage() {
               }}
             >
               <Image
-                src="/assets/gallery/about-1.png"
-                alt="Doula supporting a mother during labor"
+                src="/assets/gallery/illus-1.png"
+                alt="Nurse checking on a pregnant mother during a prenatal visit"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-contain p-4"
@@ -392,27 +392,42 @@ export default function ServicesPage() {
       <section className="py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           <div
-            className="rounded-3xl p-8 lg:p-10 border flex flex-col"
+            className="relative rounded-3xl p-8 lg:p-10 border flex flex-col overflow-hidden"
             style={{ backgroundColor: "#fff", borderColor: BORDER }}
           >
-            <span
+            <div
               aria-hidden="true"
-              className="inline-block w-10 h-0.5 mb-5 rounded-full"
-              style={{ backgroundColor: TEAL }}
-            />
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3" style={{ color: TEAL }}>
-              Meet the Founder
-            </p>
-            <h3 className="text-2xl lg:text-3xl font-extrabold mb-3" style={{ color: NEAR_BLACK }}>
-              We&apos;re here to{" "}
-              <span className="italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: TEAL }}>
-                support you
-              </span>
-            </h3>
-            <p className="text-base leading-relaxed mb-6 flex-1" style={{ color: "#555" }}>
-              Meet Nurse Ellen, your compassionate guide through pregnancy,
-              birth, and postpartum. Calm, caring support every family deserves.
-            </p>
+              className="absolute -bottom-8 -right-8 w-48 h-48 opacity-90"
+            >
+              <Image
+                src="/assets/gallery/illus-3.png"
+                alt=""
+                fill
+                sizes="192px"
+                className="object-contain"
+              />
+            </div>
+            <div className="relative">
+              <span
+                aria-hidden="true"
+                className="inline-block w-10 h-0.5 mb-5 rounded-full"
+                style={{ backgroundColor: TEAL }}
+              />
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3" style={{ color: TEAL }}>
+                Meet the Founder
+              </p>
+              <h3 className="text-2xl lg:text-3xl font-extrabold mb-3" style={{ color: NEAR_BLACK }}>
+                We&apos;re here to{" "}
+                <span className="italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: TEAL }}>
+                  support you
+                </span>
+              </h3>
+              <p className="text-base leading-relaxed mb-6 max-w-sm" style={{ color: "#555" }}>
+                Meet Nurse Ellen, your compassionate guide through pregnancy,
+                birth, and postpartum. Calm, caring support every family
+                deserves.
+              </p>
+            </div>
             <Link
               href="/about-eh"
               className="inline-flex w-max items-center gap-2 font-bold text-sm px-6 py-3 rounded-full transition-opacity hover:opacity-90"

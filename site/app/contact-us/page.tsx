@@ -97,8 +97,8 @@ export default function ContactPage() {
               }}
             >
               <Image
-                src="/assets/gallery/about-2.png"
-                alt="Doula supporting a birth parent"
+                src="/assets/gallery/illus-2.png"
+                alt="Expectant mother holding her belly with warmth"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-contain p-6"

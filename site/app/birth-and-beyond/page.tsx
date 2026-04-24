@@ -222,8 +222,8 @@ export default function BirthAndBeyondPage() {
               }}
             >
               <Image
-                src="/assets/gallery/about-1.png"
-                alt="Doula supporting a mother during labor"
+                src="/assets/gallery/illus-4.png"
+                alt="New mother holding her newborn close"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-contain p-6"
@@ -434,8 +434,8 @@ export default function BirthAndBeyondPage() {
                 }}
               >
                 <Image
-                  src="/assets/gallery/about-2.png"
-                  alt="Doula helping a pregnant mother during labor"
+                  src="/assets/gallery/about-1.png"
+                  alt="Doula supporting a mother on a birthing ball"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-contain p-6"
