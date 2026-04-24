@@ -5,7 +5,6 @@ import { FormEvent, useState } from "react";
 const MINT = "#D7F7F7";
 const NEAR_BLACK = "#111111";
 const TEAL = "#658B8B";
-const BODY_BG = "#F5F4F3";
 const BORDER = "#DBDBDB";
 
 interface FormData {
@@ -70,29 +69,7 @@ export default function ContactPageClient() {
   };
 
   return (
-    <main style={{ backgroundColor: BODY_BG, color: NEAR_BLACK }}>
-      {/* HERO */}
-      <section style={{ backgroundColor: MINT }}>
-        <div className="max-w-4xl mx-auto px-6 py-16 lg:py-20 text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: TEAL }}>
-            Get In Touch
-          </p>
-          <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6"
-            style={{ color: NEAR_BLACK }}
-          >
-            Contact Your Trusted Doula Today
-          </h1>
-          <p className="text-base lg:text-lg leading-relaxed" style={{ color: "#333" }}>
-            Fill out the form below and we will reach out within one business
-            day to confirm your Medi-Cal coverage and schedule your initial
-            assessment visit.
-          </p>
-        </div>
-      </section>
-
-      {/* CONTENT */}
-      <section className="max-w-7xl mx-auto px-6 py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-5 gap-10">
+    <section className="max-w-7xl mx-auto px-6 lg:px-10 py-20 lg:py-24 grid grid-cols-1 lg:grid-cols-5 gap-10">
         {/* LEFT: info */}
         <aside className="lg:col-span-2 space-y-5">
           <div
@@ -453,7 +430,6 @@ export default function ContactPageClient() {
             </div>
           </div>
         </div>
-      </section>
-    </main>
+    </section>
   );
 }
