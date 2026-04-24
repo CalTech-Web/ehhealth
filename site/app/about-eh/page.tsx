@@ -464,15 +464,15 @@ export default function AboutPage() {
                 style={{ backgroundColor: TEAL, opacity: 0.18 }}
               />
               <div
-                className="relative rounded-[28px] overflow-hidden aspect-[4/5] lg:aspect-[5/6]"
+                className="relative rounded-[28px] overflow-hidden aspect-square"
                 style={{
                   boxShadow:
                     "0 30px 60px -20px rgba(101,139,139,0.45), 0 12px 30px -12px rgba(0,0,0,0.15)",
                 }}
               >
                 <Image
-                  src="/assets/gallery/doula-image.png"
-                  alt="Doula supporting a mother during birth"
+                  src="/assets/team/nurse-ellen-quote.png"
+                  alt="Nurse Ellen in her clinical scrubs"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
