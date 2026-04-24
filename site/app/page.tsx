@@ -567,95 +567,61 @@ function AnimatedStatCard({
   );
 }
 
-/* ─── 3D Tilt Card Wrapper ──────────────────────────── */
-function TiltCard({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [rx, setRx] = useState(0);
-  const [ry, setRy] = useState(0);
-  const [hovered, setHovered] = useState(false);
-
-  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const cx = (e.clientX - rect.left) / rect.width;
-    const cy = (e.clientY - rect.top) / rect.height;
-    setHovered(true);
-    setRx(-(cy - 0.5) * 10);
-    setRy((cx - 0.5) * 10);
-  }
-
-  function handleMouseLeave() {
-    setHovered(false);
-    setRx(0);
-    setRy(0);
-  }
-
-  return (
-    <div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)${hovered ? " translateZ(12px)" : ""}`,
-        transition: hovered
-          ? "transform 0.08s ease-out, box-shadow 0.08s ease-out"
-          : "transform 0.5s ease, box-shadow 0.5s ease",
-        boxShadow: hovered ? "0 24px 48px rgba(101,139,139,0.30)" : undefined,
-        willChange: "transform",
-        borderRadius: "1rem",
-      }}
-    >
-      {children}
-    </div>
-  );
-}
-
 /* ─── Page ──────────────────────────────────────────── */
 export default function Home() {
   const services = [
     {
       img: "/assets/products/initial-assessment.jpg",
       title: "Initial Assessment Visit",
+      tag: "Start Here",
       desc: "The first visit covers who you are, what you need, and what matters most to you. Ellen reviews your history and birth priorities, then puts a support plan in writing before you leave.",
     },
     {
       img: "/assets/products/prenatal-visits.jpg",
       title: "Prenatal Support",
+      tag: "Prenatal",
       desc: "Birth planning, anxiety support, and VBAC preparation through focused check-ins before your due date. You leave each session with answers and a plan, not more things to figure out on your own.",
     },
     {
       img: "/assets/products/vaginal-birth-support.jpg",
       title: "Birth Doula Support",
+      tag: "Labor",
       desc: "Ellen stays with you from early labor through delivery. No breaks, no handoffs. She handles comfort techniques and speaks up for your preferences when talking to hospital staff is the last thing on your mind.",
     },
     {
       img: "/assets/products/vbac-support.jpg",
       title: "VBAC Support",
+      tag: "Labor",
       desc: "Planning a vaginal birth after a cesarean takes more than hope. Ellen helps you prepare with evidence, work through your concerns, and communicate clearly with your care team going in.",
     },
     {
       img: "/assets/products/cesarean-support.jpg",
       title: "Cesarean Birth Support",
+      tag: "Labor",
       desc: "Going in for a cesarean is its own kind of hard. Ellen is there beforehand to help you feel grounded, during if the facility allows it, and after for a steady, supported recovery.",
     },
     {
       img: "/assets/products/postpartum-support.jpg",
       title: "Postpartum Support",
+      tag: "Postpartum",
       desc: "The weeks after birth are harder than most people expect. Ellen helps with newborn feeding, soothing, sleep, and the emotional side of becoming a parent, all at your pace.",
     },
     {
       img: "/assets/products/miscarriage-support.jpg",
       title: "Pregnancy Loss Support",
+      tag: "Sensitive Care",
       desc: "If you are navigating a miscarriage or stillbirth, you deserve someone who does not rush you. Ellen provides steady, nonjudgmental care through the hardest kind of grief.",
     },
     {
       img: "/assets/products/abortion-support.jpg",
       title: "Abortion Support",
+      tag: "Sensitive Care",
       desc: "Confidential from the first call through recovery. Ellen helps with planning, logistics, emotional support, and post-procedure care, without judgment and without sharing your information.",
     },
     {
       img: "/assets/products/extended-postpartum.jpg",
       title: "Extended Postpartum Visits",
+      tag: "Postpartum",
       desc: "Up to two additional visits for deeper work on feeding challenges, sleep strategies, or family adjustment. Scheduled around your needs, not a fixed calendar.",
     },
   ];
@@ -1085,65 +1051,126 @@ export default function Home() {
         style={{ backgroundColor: MINT }}
       >
         <div className="max-w-7xl mx-auto px-6">
-          <p
-            className="section-eyebrow text-sm font-semibold uppercase tracking-widest text-center mb-3"
-          >
-            Nine Services. Medi-Cal Covered.
-          </p>
-          <h2
-            className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
-            style={{ color: NEAR_BLACK }}
-          >
-            Support at Every Stage
-          </h2>
-          <p
-            className="text-lg text-center max-w-2xl mx-auto mb-8"
-            style={{ color: "#444" }}
-          >
-            From your first prenatal check-in to the weeks after birth, Ellen
-            provides one consistent presence. Every service below is covered
-            through Medi-Cal for qualifying families.
-          </p>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16">
+            <div className="max-w-2xl">
+              <p className="section-eyebrow text-sm font-semibold uppercase tracking-widest mb-4 flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="inline-block w-10 h-px"
+                  style={{ backgroundColor: TEAL }}
+                />
+                Nine Services. Medi-Cal Covered.
+              </p>
+              <h2
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-5 reveal"
+                style={{ color: NEAR_BLACK }}
+              >
+                Support at{" "}
+                <span className="italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: TEAL }}>
+                  every stage
+                </span>
+              </h2>
+              <p className="text-lg leading-relaxed" style={{ color: "#444" }}>
+                From your first prenatal check-in to the weeks after birth,
+                Ellen provides one consistent presence. Every service below is
+                covered through Medi-Cal for qualifying families.
+              </p>
+            </div>
+            <div
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full w-max border"
+              style={{ backgroundColor: "rgba(255,255,255,0.7)", borderColor: TEAL, color: TEAL }}
+            >
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M10 2l6 2v5c0 4-3 7-6 9-3-2-6-5-6-9V4l6-2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span className="text-xs font-bold uppercase tracking-widest">All covered by Medi-Cal</span>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {services.map((s, i) => (
-              <TiltCard key={s.title}>
-                <div
-                  className="rounded-2xl overflow-hidden border flex flex-col h-full reveal service-card"
-                  style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${(i % 3) * 0.1}s` }}
-                >
-                  <div className="relative h-44 overflow-hidden">
-                    <img
-                      src={s.img}
-                      alt={s.title}
-                      className="object-cover w-full h-full service-img"
-                      loading="lazy"
-                    />
-                    <div className="service-img-overlay" aria-hidden="true" />
-                  </div>
-                  <div className="p-5 flex flex-col flex-1">
-                    <h3
-                      className="text-base font-bold mb-2"
-                      style={{ color: NEAR_BLACK }}
-                    >
-                      {s.title}
-                    </h3>
-                    <p
-                      className="text-sm leading-relaxed flex-1"
-                      style={{ color: "#555" }}
-                    >
-                      {s.desc}
-                    </p>
-                    <a
-                      href="#contact"
-                      className="mt-4 text-sm font-bold underline"
-                      style={{ color: TEAL }}
-                    >
-                      Apply Now
-                    </a>
-                  </div>
+              <a
+                key={s.title}
+                href="/contact-us"
+                className="group relative rounded-3xl overflow-hidden border flex flex-col h-full reveal service-card-v2"
+                style={{
+                  backgroundColor: "#fff",
+                  borderColor: BORDER,
+                  animationDelay: `${(i % 3) * 0.1}s`,
+                }}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt=""
+                    aria-hidden="true"
+                    className="object-cover w-full h-full service-card-v2-img"
+                    loading="lazy"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    aria-hidden="true"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%)",
+                    }}
+                  />
+                  <span
+                    className="absolute top-4 left-4 text-[10px] font-bold uppercase tracking-[0.18em] px-3 py-1.5 rounded-full"
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.92)",
+                      color: TEAL,
+                      backdropFilter: "blur(6px)",
+                      WebkitBackdropFilter: "blur(6px)",
+                    }}
+                  >
+                    {s.tag}
+                  </span>
+                  <span
+                    className="absolute top-4 right-4 text-[10px] font-bold tabular-nums px-2.5 py-1.5 rounded-full"
+                    style={{ backgroundColor: "rgba(17,17,17,0.55)", color: "#fff" }}
+                  >
+                    {String(i + 1).padStart(2, "0")} / 09
+                  </span>
                 </div>
-              </TiltCard>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3
+                    className="text-lg lg:text-xl font-bold mb-3 leading-snug"
+                    style={{ color: NEAR_BLACK }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p
+                    className="text-sm leading-relaxed flex-1"
+                    style={{ color: "#555" }}
+                  >
+                    {s.desc}
+                  </p>
+                  <span
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-bold service-card-v2-cta"
+                    style={{ color: TEAL }}
+                  >
+                    Apply Now
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      aria-hidden="true"
+                      className="service-card-v2-arrow"
+                    >
+                      <path
+                        d="M4 10h12m0 0l-4-4m4 4l-4 4"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </div>

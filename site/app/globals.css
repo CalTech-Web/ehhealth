@@ -265,6 +265,33 @@ body {
 .reveal.in-view .step-circle[data-step="4"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 1.55s both; }
 .reveal.in-view .step-circle[data-step="5"] { animation: step-circle-pop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) 1.90s both; }
 
+/* ─── Service card v2 hover ─────────────────────────── */
+.service-card-v2 {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.service-card-v2:hover {
+  transform: translateY(-6px);
+  border-color: rgba(101, 139, 139, 0.35);
+  box-shadow: 0 24px 48px -20px rgba(101, 139, 139, 0.35), 0 8px 20px -10px rgba(0, 0, 0, 0.08);
+}
+
+.service-card-v2-img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-card-v2:hover .service-card-v2-img {
+  transform: scale(1.06);
+}
+
+.service-card-v2-arrow {
+  transition: transform 0.3s ease;
+}
+
+.service-card-v2:hover .service-card-v2-arrow {
+  transform: translateX(4px);
+}
+
 /* ─── Why Choose card hover ─────────────────────────── */
 .why-card {
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
