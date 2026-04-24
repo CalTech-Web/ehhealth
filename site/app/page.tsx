@@ -62,141 +62,109 @@ function StickyMobileCTA() {
   );
 }
 
-/* ─── Parallax image band ─────────────────────────── */
+/* ─── Promise split band (image left, text right) ───── */
 function ParallaxBand() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const imgWrapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function update() {
-      if (!sectionRef.current || !imgWrapRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const progress = 1 - rect.bottom / (window.innerHeight + rect.height);
-      const offset = (progress - 0.5) * 70;
-      imgWrapRef.current.style.transform = `translateY(${offset}px)`;
-    }
-    window.addEventListener("scroll", update, { passive: true });
-    update();
-    return () => window.removeEventListener("scroll", update);
-  }, []);
-
   const words = ["voice", "birth", "family"];
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative h-[26rem] sm:h-[30rem] lg:h-[34rem] overflow-hidden"
-    >
-      <div
-        ref={imgWrapRef}
-        className="absolute will-change-transform"
-        style={{ top: "-18%", bottom: "-18%", left: 0, right: 0 }}
-      >
-        <Image
-          src="/assets/gallery/doula-image.png"
-          alt="Doula supporting a mother during birth"
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-      </div>
-
-      {/* Gradient overlay: strong on left, fades right on desktop */}
-      <div
-        className="absolute inset-0 hidden lg:block"
-        aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(100deg, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.62) 42%, rgba(10,10,10,0.28) 72%, rgba(10,10,10,0.05) 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 lg:hidden"
-        aria-hidden="true"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.72) 60%, rgba(10,10,10,0.85) 100%)",
-        }}
-      />
-
-      {/* Decorative corner ornament */}
-      <div
-        className="absolute top-8 left-8 lg:top-12 lg:left-12 hidden sm:block pointer-events-none"
-        aria-hidden="true"
-      >
-        <svg width="56" height="44" viewBox="0 0 56 44" fill="none">
-          <path
-            d="M14 44C6.3 44 0 37.7 0 30c0-8.5 6.6-18 18-30h10c-8 9.5-12 17-12 22 4 0 8 3.5 8 8.5S22 44 14 44zm32 0c-7.7 0-14-6.3-14-14 0-8.5 6.6-18 18-30h10c-8 9.5-12 17-12 22 4 0 8 3.5 8 8.5S54 44 46 44z"
-            fill="#D7F7F7"
-            fillOpacity="0.22"
-          />
-        </svg>
-      </div>
-
-      <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex flex-col justify-center">
-        <div className="max-w-2xl">
-          <p
-            className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] mb-5 sm:mb-6 flex items-center gap-3"
-            style={{ color: "#D7F7F7" }}
-          >
-            <span
-              className="inline-block w-8 h-px"
-              style={{ backgroundColor: "#D7F7F7" }}
+    <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5F4F3" }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* LEFT: image */}
+          <div className="relative order-1">
+            <div
+              className="absolute -top-4 -left-4 w-24 h-24 rounded-full hidden sm:block"
               aria-hidden="true"
+              style={{ backgroundColor: "#D7F7F7", opacity: 0.7 }}
             />
-            A Promise From Ellen
-          </p>
-
-          <div className="space-y-1.5 sm:space-y-2.5">
-            {words.map((w, i) => (
-              <h3
-                key={w}
-                className="font-extrabold leading-[1.05] tracking-tight"
-                style={{
-                  fontSize: "clamp(2.2rem, 6vw, 4.25rem)",
-                  color: "#fff",
-                  textShadow: "0 2px 18px rgba(0,0,0,0.35)",
-                }}
-              >
-                <span style={{ color: "rgba(215,247,247,0.72)", fontWeight: 500 }}>
-                  Your
-                </span>{" "}
-                <span
-                  className="italic"
-                  style={{
-                    fontFamily: "Georgia, 'Times New Roman', serif",
-                    color: i === 1 ? "#D7F7F7" : "#fff",
-                  }}
-                >
-                  {w}
-                </span>
-                <span style={{ color: "#D7F7F7" }}>.</span>
-              </h3>
-            ))}
+            <div
+              className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full hidden sm:block"
+              aria-hidden="true"
+              style={{ backgroundColor: "#658B8B", opacity: 0.18 }}
+            />
+            <div
+              className="relative rounded-[28px] overflow-hidden aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]"
+              style={{ boxShadow: "0 30px 60px -20px rgba(101,139,139,0.45), 0 12px 30px -12px rgba(0,0,0,0.15)" }}
+            >
+              <Image
+                src="/assets/gallery/doula-image.png"
+                alt="Doula supporting a mother during birth"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
 
-          <div className="mt-8 sm:mt-10 flex items-center gap-4">
-            <span
-              className="inline-block w-10 h-px"
-              style={{ backgroundColor: "rgba(255,255,255,0.55)" }}
-              aria-hidden="true"
-            />
-            <div>
-              <p
-                className="text-lg sm:text-xl italic"
-                style={{
-                  fontFamily: "Georgia, 'Times New Roman', serif",
-                  color: "#fff",
-                }}
-              >
-                Ellen Hakopyan
-              </p>
-              <p
-                className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] mt-1"
-                style={{ color: "rgba(215,247,247,0.78)" }}
-              >
-                Founder &middot; Lead Doula &middot; Nurse Practitioner
-              </p>
+          {/* RIGHT: text */}
+          <div className="order-2">
+            <p
+              className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.22em] mb-5 sm:mb-6 flex items-center gap-3"
+              style={{ color: "#658B8B" }}
+            >
+              <span
+                className="inline-block w-8 h-px"
+                style={{ backgroundColor: "#658B8B" }}
+                aria-hidden="true"
+              />
+              A Promise From Ellen
+            </p>
+
+            <div className="space-y-1.5 sm:space-y-2.5">
+              {words.map((w, i) => (
+                <h3
+                  key={w}
+                  className="font-extrabold leading-[1.05] tracking-tight"
+                  style={{
+                    fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
+                    color: "#111111",
+                  }}
+                >
+                  <span style={{ color: "#658B8B", opacity: 0.55, fontWeight: 500 }}>
+                    Your
+                  </span>{" "}
+                  <span
+                    className="italic"
+                    style={{
+                      fontFamily: "Georgia, 'Times New Roman', serif",
+                      color: i === 1 ? "#658B8B" : "#111111",
+                    }}
+                  >
+                    {w}
+                  </span>
+                  <span style={{ color: "#658B8B" }}>.</span>
+                </h3>
+              ))}
+            </div>
+
+            <p className="mt-7 text-base lg:text-lg leading-relaxed max-w-md" style={{ color: "#555" }}>
+              Nurse-led doula support that honors your preferences, your
+              culture, and the way you want your birth to feel.
+            </p>
+
+            <div className="mt-8 flex items-center gap-4">
+              <span
+                className="inline-block w-10 h-px"
+                style={{ backgroundColor: "rgba(17,17,17,0.2)" }}
+                aria-hidden="true"
+              />
+              <div>
+                <p
+                  className="text-lg sm:text-xl italic"
+                  style={{
+                    fontFamily: "Georgia, 'Times New Roman', serif",
+                    color: "#111111",
+                  }}
+                >
+                  Ellen Hakopyan
+                </p>
+                <p
+                  className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] mt-1"
+                  style={{ color: "#658B8B" }}
+                >
+                  Founder &middot; Lead Doula &middot; Nurse Practitioner
+                </p>
+              </div>
             </div>
           </div>
         </div>
