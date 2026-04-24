@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Privacy Policy & Terms of Service | EH Nursing and Wellness Services",
@@ -19,38 +19,7 @@ const BORDER = "#DBDBDB";
 export default function PrivacyPolicyPage() {
   return (
     <div style={{ backgroundColor: BODY_BG, color: NEAR_BLACK, minHeight: "100vh" }}>
-      {/* NAV */}
-      <nav
-        className="sticky top-0 z-50 w-full px-6 py-3 flex items-center justify-between shadow-sm"
-        style={{ backgroundColor: "#fff", borderBottom: `1px solid ${BORDER}` }}
-      >
-        <Link href="/" aria-label="EH Nursing and Wellness Services Home">
-          <Image
-            src="/assets/logos/eh-logo-rectangle.png"
-            alt="EH Nursing and Wellness Services"
-            width={180}
-            height={48}
-            className="h-10 w-auto object-contain"
-            priority
-          />
-        </Link>
-        <div className="flex items-center gap-3">
-          <a
-            href="tel:8339123999"
-            className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full border-2 transition-colors"
-            style={{ borderColor: TEAL, color: TEAL }}
-          >
-            Call (833) 912-3999
-          </a>
-          <Link
-            href="/#contact"
-            className="inline-flex items-center text-sm font-bold px-5 py-2.5 rounded-full transition-opacity hover:opacity-90"
-            style={{ backgroundColor: TEAL, color: "#fff" }}
-          >
-            Apply Now
-          </Link>
-        </div>
-      </nav>
+      <SiteHeader />
 
       {/* HERO */}
       <div
@@ -295,25 +264,7 @@ export default function PrivacyPolicyPage() {
 
       </div>
 
-      {/* FOOTER */}
-      <footer
-        className="py-8"
-        style={{ backgroundColor: "#0a0a0a", borderTop: "1px solid rgba(255,255,255,0.06)" }}
-      >
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs" style={{ color: "#555" }}>
-            &copy; 2026 EH Nursing and Wellness Services. All Rights Reserved.
-          </p>
-          <div className="flex gap-4 text-xs" style={{ color: "#555" }}>
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
-            <Link href="/privacy-policy-and-tos" className="hover:text-white transition-colors">
-              Privacy Policy &amp; Terms
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef, FormEvent } from "react";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 
 /* ─── Scroll progress bar ────────────────────────────── */
 function ScrollProgressBar() {
@@ -706,16 +708,6 @@ export default function Home() {
     },
   ];
 
-  const [navScrolled, setNavScrolled] = useState(false);
-
-  useEffect(() => {
-    function onNavScroll() {
-      setNavScrolled(window.scrollY > 20);
-    }
-    window.addEventListener("scroll", onNavScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onNavScroll);
-  }, []);
-
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) =>
@@ -734,39 +726,7 @@ export default function Home() {
   return (
     <main className="pb-20 sm:pb-0" style={{ backgroundColor: BODY_BG, color: NEAR_BLACK }}>
       <ScrollProgressBar />
-      {/* ── NAV ─────────────────────────────────────────── */}
-      <nav
-        className="sticky top-0 z-50 w-full px-6 py-3 flex items-center justify-between"
-        style={{
-          backgroundColor: navScrolled ? "rgba(255,255,255,0.78)" : "#fff",
-          borderBottom: `1px solid ${BORDER}`,
-          backdropFilter: navScrolled ? "blur(18px) saturate(180%)" : "none",
-          WebkitBackdropFilter: navScrolled ? "blur(18px) saturate(180%)" : "none",
-          boxShadow: navScrolled ? "0 2px 24px rgba(0,0,0,0.08)" : "0 1px 3px rgba(0,0,0,0.05)",
-          transition: "background-color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease",
-        }}
-      >
-        <a href="/" aria-label="EH Nursing and Wellness Services Home" className="flex flex-col leading-tight">
-          <span className="text-base font-extrabold tracking-tight" style={{ color: NEAR_BLACK }}>EH Nursing</span>
-          <span className="text-xs font-semibold tracking-wide uppercase" style={{ color: TEAL }}>and Wellness Services</span>
-        </a>
-        <div className="flex items-center gap-3">
-          <a
-            href="tel:8339123999"
-            className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full border-2 transition-colors"
-            style={{ borderColor: TEAL, color: TEAL }}
-          >
-            Call (833) 912-3999
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center text-sm font-bold px-5 py-2.5 rounded-full transition-opacity hover:opacity-90 cta-shimmer"
-            style={{ backgroundColor: TEAL, color: "#fff" }}
-          >
-            Apply Now
-          </a>
-        </div>
-      </nav>
+      <SiteHeader />
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
@@ -1510,84 +1470,7 @@ export default function Home() {
       {/* ── STICKY MOBILE CTA ────────────────────────────── */}
       <StickyMobileCTA />
 
-      {/* ── FOOTER ───────────────────────────────────────── */}
-      <footer
-        className="py-10"
-        style={{ backgroundColor: "#0a0a0a", borderTop: "1px solid rgba(255,255,255,0.06)" }}
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* Logo + about */}
-            <div>
-              <div className="flex flex-col leading-tight mb-4">
-                <span className="text-base font-extrabold tracking-tight" style={{ color: "#fff" }}>EH Nursing</span>
-                <span className="text-xs font-semibold tracking-wide uppercase" style={{ color: MINT }}>and Wellness Services</span>
-              </div>
-              <p className="text-xs leading-relaxed" style={{ color: "#888" }}>
-                EH Nursing brings nurse-led doula support to families throughout
-                Los Angeles County. Medi-Cal covered for qualifying families.
-                Ellen comes to you, no office visit needed.
-              </p>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: MINT }}>
-                Contact
-              </h4>
-              <ul className="space-y-2 text-xs" style={{ color: "#888" }}>
-                <li>
-                  <a href="tel:8339123999" className="hover:text-white transition-colors">
-                    (833) 912-3999
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:7472042325" className="hover:text-white transition-colors">
-                    (747) 204-2325
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:contact@ehhealth.org" className="hover:text-white transition-colors">
-                    contact@ehhealth.org
-                  </a>
-                </li>
-                <li>Van Nuys, Los Angeles County, CA</li>
-              </ul>
-            </div>
-
-            {/* Insurance */}
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: MINT }}>
-                Insurance Accepted
-              </h4>
-              <ul className="space-y-1 text-xs" style={{ color: "#888" }}>
-                <li>LA Care Health Plan</li>
-                <li>Kaiser Permanente Southern CA</li>
-                <li>HealthNet</li>
-                <li>CalOptima</li>
-                <li>Medi-Cal Managed Care HMO plans</li>
-              </ul>
-            </div>
-          </div>
-
-          <div
-            className="border-t pt-6 flex flex-col md:flex-row items-center justify-between gap-4"
-            style={{ borderColor: "rgba(255,255,255,0.06)" }}
-          >
-            <p className="text-xs" style={{ color: "#555" }}>
-              &copy; 2026 EH Nursing and Wellness Services. All Rights Reserved.
-            </p>
-            <div className="flex gap-4 text-xs" style={{ color: "#555" }}>
-              <a href="/privacy-policy-and-tos" className="hover:text-white transition-colors">
-                Privacy Policy &amp; Terms
-              </a>
-              <a href="https://caltechweb.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                Powered by Caltechweb
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
