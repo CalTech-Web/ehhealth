@@ -83,7 +83,7 @@ function ParallaxBand() {
               style={{ backgroundColor: "#658B8B", opacity: 0.18 }}
             />
             <div
-              className="relative rounded-[28px] overflow-hidden aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]"
+              className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden aspect-[5/4] sm:aspect-[4/5]"
               style={{ boxShadow: "0 30px 60px -20px rgba(101,139,139,0.45), 0 12px 30px -12px rgba(0,0,0,0.15)" }}
             >
               <Image

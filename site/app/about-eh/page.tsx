@@ -258,8 +258,8 @@ export default function AboutPage() {
             {credentials.map((c, i) => (
               <div
                 key={c.label}
-                className="flex flex-col gap-2"
-                style={i > 0 ? { borderLeft: `1px solid ${BORDER}`, paddingLeft: "1.5rem" } : undefined}
+                className={`flex flex-col gap-2 ${i > 0 ? "lg:border-l lg:pl-6" : ""}`}
+                style={i > 0 ? { borderColor: BORDER } : undefined}
               >
                 <p
                   className="text-[10px] font-bold uppercase tracking-[0.2em]"
