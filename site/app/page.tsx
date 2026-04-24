@@ -660,26 +660,55 @@ export default function Home() {
     },
   ];
 
+  const iconStroke = { stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, fill: "none" };
   const differentiators = [
     {
-      icon: "/assets/gallery/icon-nurse-led.png",
+      tag: "Clinical Depth",
       title: "Nurse-Led Care",
       desc: "Ellen spent years in the Pediatric and Neonatal ICU before founding EH Nursing. She is not acting as your doctor, but she knows exactly what happens in a delivery room and how to keep you steady through it.",
+      icon: (
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <path d="M11 4v8a5 5 0 0 0 10 0V4" {...iconStroke} />
+          <circle cx="11" cy="4" r="1.3" fill="currentColor" />
+          <circle cx="21" cy="4" r="1.3" fill="currentColor" />
+          <path d="M16 17v6a5 5 0 0 0 5 5 4 4 0 0 0 4-4v-2" {...iconStroke} />
+          <circle cx="25" cy="22" r="2.2" {...iconStroke} />
+        </svg>
+      ),
     },
     {
-      icon: "/assets/gallery/icon-medi-cal.png",
+      tag: "No Out-of-Pocket",
       title: "Medi-Cal Covered",
       desc: "Services are covered by Medi-Cal Managed Care plans including LA Care, Kaiser, HealthNet, and CalOptima. For qualifying families, that means professional doula support at no out-of-pocket cost.",
+      icon: (
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <path d="M16 3l10 3v9c0 6.2-4.2 11.5-10 14-5.8-2.5-10-7.8-10-14V6l10-3z" {...iconStroke} />
+          <path d="M11 16l3.5 3.5L22 12" {...iconStroke} />
+        </svg>
+      ),
     },
     {
-      icon: "/assets/gallery/icon-judgment-free.png",
+      tag: "Every Family",
       title: "Judgment-Free Care",
       desc: "Whether you are planning a VBAC, navigating a loss, or an LGBTQ+ family building something new, you do not owe anyone an explanation here. Every family walks through the same door.",
+      icon: (
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <path d="M16 27s-9-5.5-9-13a5.5 5.5 0 0 1 9-4.2A5.5 5.5 0 0 1 25 14c0 7.5-9 13-9 13z" {...iconStroke} />
+          <path d="M11 14h10" {...iconStroke} />
+        </svg>
+      ),
     },
     {
-      icon: "/assets/gallery/icon-continuous-care.png",
+      tag: "One Provider",
       title: "Continuous Care",
       desc: "One provider, prenatal through postpartum. You see the same face at every visit, so when labor starts, you already know who is showing up for you.",
+      icon: (
+        <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+          <path d="M26 16a10 10 0 1 1-3-7.1" {...iconStroke} />
+          <path d="M27 4v6h-6" {...iconStroke} />
+          <circle cx="16" cy="16" r="2.5" {...iconStroke} />
+        </svg>
+      ),
     },
   ];
 
@@ -949,58 +978,101 @@ export default function Home() {
       </div>
 
       {/* ── WHY CHOOSE EH ──────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <p
-          className="section-eyebrow text-sm font-semibold uppercase tracking-widest text-center mb-3"
-        >
-          Why Choose EH Nursing
-        </p>
-        <h2
-          className="text-3xl lg:text-4xl font-extrabold text-center mb-4 reveal"
-          style={{ color: NEAR_BLACK }}
-        >
-          Nurse-Led. Insurance Covered. Always Human.
-        </h2>
-        <p
-          className="text-lg text-center max-w-2xl mx-auto mb-14"
-          style={{ color: "#555" }}
-        >
-          Doula care has always been expensive. Most families pay out of pocket
-          or go without. If you have Medi-Cal, you may qualify for full
-          coverage, delivered by a nurse practitioner who spent years in the
-          NICU.
-        </p>
+      <section className="relative py-24 lg:py-28 overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full blur-3xl"
+          style={{ backgroundColor: MINT, opacity: 0.55 }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-32 -right-24 w-[30rem] h-[30rem] rounded-full blur-3xl"
+          style={{ backgroundColor: TEAL, opacity: 0.10 }}
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {differentiators.map((d, i) => (
-            <div
-              key={d.title}
-              className="rounded-2xl p-6 flex flex-col items-start gap-4 border reveal card-hover"
-              style={{ backgroundColor: "#fff", borderColor: BORDER, animationDelay: `${i * 0.1}s` }}
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <p className="section-eyebrow text-sm font-semibold uppercase tracking-widest mb-4 flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="inline-block w-10 h-px"
+                style={{ backgroundColor: TEAL }}
+              />
+              Why Choose EH Nursing
+            </p>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-5 reveal"
+              style={{ color: NEAR_BLACK }}
             >
-              <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: MINT }}
+              Nurse-led.{" "}
+              <span className="italic" style={{ fontFamily: "Georgia, 'Times New Roman', serif", color: TEAL }}>
+                Insurance covered.
+              </span>{" "}
+              Always human.
+            </h2>
+            <p className="text-lg leading-relaxed max-w-2xl" style={{ color: "#555" }}>
+              Doula care has always been expensive. Most families pay out of
+              pocket or go without. If you have Medi-Cal, you may qualify for
+              full coverage, delivered by a nurse practitioner who spent years
+              in the NICU.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 mt-14">
+            {differentiators.map((d, i) => (
+              <article
+                key={d.title}
+                className="relative rounded-2xl p-6 lg:p-7 flex flex-col border reveal why-card"
+                style={{
+                  backgroundColor: "#fff",
+                  borderColor: BORDER,
+                  animationDelay: `${i * 0.1}s`,
+                }}
               >
-                <Image
-                  src={d.icon}
-                  alt={d.title}
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 object-contain"
+                <span
+                  aria-hidden="true"
+                  className="absolute top-0 left-6 right-6 h-px"
+                  style={{
+                    background: `linear-gradient(90deg, transparent, ${TEAL}, transparent)`,
+                    opacity: 0.6,
+                  }}
                 />
-              </div>
-              <h3
-                className="text-lg font-bold"
-                style={{ color: NEAR_BLACK }}
-              >
-                {d.title}
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "#555" }}>
-                {d.desc}
-              </p>
-            </div>
-          ))}
+
+                <div className="flex items-start justify-between mb-6">
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform"
+                    style={{
+                      background: `linear-gradient(135deg, ${MINT} 0%, #fff 100%)`,
+                      color: TEAL,
+                      border: `1px solid ${MINT}`,
+                      boxShadow: "0 6px 18px rgba(101,139,139,0.18)",
+                    }}
+                  >
+                    {d.icon}
+                  </div>
+                  <span
+                    className="text-xs font-semibold tabular-nums"
+                    style={{ color: TEAL, opacity: 0.55 }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <p
+                  className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2"
+                  style={{ color: TEAL }}
+                >
+                  {d.tag}
+                </p>
+                <h3 className="text-xl font-bold mb-3 leading-tight" style={{ color: NEAR_BLACK }}>
+                  {d.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#555" }}>
+                  {d.desc}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
