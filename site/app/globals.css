@@ -79,7 +79,7 @@ summary:focus-visible {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 75s linear infinite;
+  animation: marquee-scroll 120s linear infinite;
 }
 
 .marquee-track:hover {
