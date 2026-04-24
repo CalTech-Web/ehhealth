@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import YouTubePopup from "./components/YouTubePopup";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ehhealth.org"),
@@ -469,6 +470,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         {children}
+        <YouTubePopup />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
